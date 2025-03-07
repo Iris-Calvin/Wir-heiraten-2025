@@ -1,32 +1,54 @@
-// Funktion zum Ein- und Ausblenden des Menüs
-function toggleMenu() {
-    const menu = document.getElementById("menu");
-    // Wenn das Menü links außerhalb des Bildschirms ist, dann schiebe es nach rechts
-    if (menu.style.left === "-250px") {
-        menu.style.left = "0";
+// Passwortschutz
+function checkPassword() {
+    const enteredPassword = document.getElementById("password-input").value;
+    const correctPassword = "06092025";
+
+    if (enteredPassword === correctPassword) {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
     } else {
-        menu.style.left = "-250px";
+        document.getElementById("error-message").style.display = "block";
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const countdownDate = new Date("September 6, 2025 14:00:00").getTime();
+// Menü ein- und ausklappen
+function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
 
-    const countdownFunction = setInterval(function () {
-        const now = new Date().getTime();
-        const timeLeft = countdownDate - now;
+// Countdown bis zum 6. September 2025, 14:00 Uhr
+const countdownDate = new Date("Sep 6, 2025 14:00:00").getTime();
 
-        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countdownDate - now;
 
-        document.getElementById("countdown-timer").innerHTML =
-            days + "T " + hours + "H " + minutes + "M " + seconds + "S ";
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        if (timeLeft < 0) {
-            clearInterval(countdownFunction);
-            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen! 🎉";
-        }
-    }, 1000);
+    document.getElementById("countdown-timer").innerHTML = days + "T " + hours + "H " + minutes + "M " + seconds + "S ";
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen! 🎉";
+    }
+}, 1000);
+
+// Foto-Upload
+document.getElementById("photo-upload").addEventListener("change", function(event) {
+    let preview = document.getElementById("photo-preview");
+    preview.innerHTML = "";
+
+    for (let file of event.target.files) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let img = document.createElement("img");
+            img.src = e.target.result;
+            preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
 });
