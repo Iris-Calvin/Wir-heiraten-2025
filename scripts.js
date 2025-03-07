@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
         document.getElementById("countdown-timer").innerHTML =
-            days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            days + "T " + hours + "H " + minutes + "M " + seconds + "S ";
 
         if (timeLeft < 0) {
             clearInterval(countdownFunction);
