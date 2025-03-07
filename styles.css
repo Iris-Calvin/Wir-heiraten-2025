@@ -46,7 +46,7 @@ h2 {
 .menu-btn .bar {
     width: 30px;
     height: 5px;
-    background-color: #3399ff; /* Hellblau */
+    background-color: black; /* Menü-Button Balken in schwarz */
     border-radius: 5px;
 }
 
