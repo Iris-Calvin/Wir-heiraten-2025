@@ -1,9 +1,7 @@
 /* Allgemeines Styling */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('blumen-hintergrund.jpg'); /* Füge dein Blumenbild hinzu */
-    background-size: cover;
-    background-position: center;
+    background-color: #f1f9ff; /* Helles Blau */
     color: #333;
     text-align: center;
 }
@@ -46,7 +44,7 @@ button:hover {
 /* Menü */
 .menu {
     display: none;
-    background: rgba(0, 56, 168, 0.9);
+    background: rgba(0, 56, 168, 0.9); /* Blau */
     position: fixed;
     top: 0;
     left: 0;
@@ -83,3 +81,15 @@ button:hover {
     border-radius: 10px;
 }
 
+/* Header */
+header h1 {
+    color: #0038a8; /* Blau */
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer p {
+    color: #0038a8; /* Blau */
+    margin-top: 20px;
+}
