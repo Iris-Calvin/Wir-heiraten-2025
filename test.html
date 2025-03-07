@@ -8,31 +8,47 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
+    <!-- Menü Button -->
+    <div class="menu-btn" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Menü -->
+    <nav id="menu" class="menu">
+        <ul>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#countdown">Countdown</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#photos">Fotos</a></li>
+        </ul>
+    </nav>
+
     <header>
         <h1>Hochzeit von Iris & Calvin</h1>
     </header>
 
-    <section class="details">
+    <section id="details" class="details">
         <h2>Details zur Hochzeit</h2>
         <p><strong>Datum:</strong> 6. September 2025</p>
         <p><strong>Trauungslocation:</strong> Weingut Cobenzl</p>
         <p><strong>Hochzeitsfeier:</strong> Stiftsrestaurant Leopold</p>
     </section>
 
-    <section class="countdown">
+    <section id="countdown" class="countdown">
         <h2>Countdown zur Hochzeit</h2>
         <div id="countdown-timer"></div>
     </section>
 
-    <section class="rsvp">
+    <section id="rsvp" class="rsvp">
         <h2>RSVP</h2>
         <p>Bitte bestätige deine Teilnahme über unser <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">RSVP Formular</a></p>
     </section>
 
-    <section class="photo-gallery">
+    <section id="photos" class="photo-gallery">
         <h2>Fotos</h2>
         <p>Hier werden bald unsere Hochzeitsfotos veröffentlicht.</p>
-        <!-- Hier kannst du Bilder hinzufügen -->
         <div class="photos">
             <img src="https://via.placeholder.com/150" alt="Beispielbild 1">
             <img src="https://via.placeholder.com/150" alt="Beispielbild 2">
