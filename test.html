@@ -14,7 +14,7 @@
         <h2>Willkommen zur Hochzeit von Iris & Calvin</h2>
         <p>Bitte gib den erhaltenen Code ein, um fortzufahren:</p>
         <input type="password" id="password-input" placeholder="Code eingeben">
-        <button onclick="checkPassword()">Login</button>
+        <button id="login-button">Login</button>
         <p id="error-message" style="color: red; display: none;">Leider ist der Code falsch! Bitte versuche es noch einmal.</p>
     </div>
 
@@ -34,6 +34,7 @@
                 <li><a href="#countdown">Countdown</a></li>
                 <li><a href="#rsvp">RSVP</a></li>
                 <li><a href="#photos">Fotos</a></li>
+                <li><a href="#upload">Foto Hochladen</a></li> <!-- Neuer Menüpunkt -->
             </ul>
         </nav>
 
@@ -66,6 +67,16 @@
                 <img src="https://via.placeholder.com/150" alt="Beispielbild 2">
                 <img src="https://via.placeholder.com/150" alt="Beispielbild 3">
             </div>
+        </section>
+
+        <!-- Foto Upload -->
+        <section id="upload" class="photo-upload">
+            <h2>Foto Hochladen</h2>
+            <form id="upload-form">
+                <input type="file" id="file-input" accept="image/*" />
+                <button type="submit">Foto Hochladen</button>
+            </form>
+            <div id="uploaded-photo-container"></div> <!-- Bereich, um das hochgeladene Foto anzuzeigen -->
         </section>
 
         <footer>
