@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Login-Button Funktionalität
+    document.getElementById("login-button").addEventListener("click", checkPassword);
+
     // Countdown Timer
     const countdownDate = new Date("2025-09-06T00:00:00").getTime();
 
@@ -45,4 +48,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event-Listener für den Menü-Button
     const menuButton = document.querySelector(".menu-btn");
     menuButton.addEventListener("click", toggleMenu);
+
+    // Foto Upload Handling
+    const uploadForm = document.getElementById("upload-form");
+    const fileInput = document.getElementById("file-input");
+    const uploadedPhotoContainer = document.getElementById("uploaded-photo-container");
+
+    uploadForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Verhindert das Absenden des Formulars
+
+        const file = fileInput.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                const img = document.createElement("img");
+                img.src = event.target.result;
+                uploadedPhotoContainer.innerHTML = ''; // Leert den Container
+                uploadedPhotoContainer.appendChild(img); // Fügt das hochgeladene Bild hinzu
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            alert("Bitte wähle ein Bild aus.");
+        }
+    });
 });
