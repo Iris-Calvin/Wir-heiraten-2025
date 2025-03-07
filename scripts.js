@@ -10,7 +10,7 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const countdownDate = new Date("March 7, 2025 13:30:00").getTime();
+    const countdownDate = new Date("September 6, 2025 14:00:00").getTime();
 
     const countdownFunction = setInterval(function () {
         const now = new Date().getTime();
