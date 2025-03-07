@@ -58,11 +58,15 @@ h2 {
     height: 100%;
     width: 250px;
     background-color: #3399ff; /* Hellblau */
-    transition: 0.3s;
+    transition: left 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
+}
+
+.menu.open {
+    left: 0;
 }
 
 .menu ul {
