@@ -50,6 +50,53 @@ h2 {
     border-radius: 5px;
 }
 
+/* Foto Upload Section */
+.photo-upload {
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.photo-upload input {
+    margin-bottom: 20px;
+}
+
+#uploaded-photo-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#uploaded-photo-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Menü Button */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-btn .bar {
+    width: 30px;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+}
+
 /* Menü */
 .menu {
     position: fixed;
@@ -57,8 +104,8 @@ h2 {
     left: -250px;
     height: 100%;
     width: 250px;
-    background-color: #3399ff; /* Hellblau */
-    transition: left 0.3s ease-in-out;
+    background-color: #3399ff;
+    transition: 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,7 +133,7 @@ h2 {
 }
 
 .menu ul li a:hover {
-    color: #ff7f00; /* Orange */
+    color: #ff7f00;
 }
 
 /* Details Section */
