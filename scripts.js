@@ -1,7 +1,7 @@
 // Passwortschutz
 function checkPassword() {
     const enteredPassword = document.getElementById("password-input").value;
-    const correctPassword = "06092025";
+    const correctPassword = "0609";
 
     if (enteredPassword === correctPassword) {
         document.getElementById("login-container").style.display = "none";
