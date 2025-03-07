@@ -50,4 +50,109 @@ h2 {
 }
 
 /* Menü */
-.m
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #3399ff; /* Hellblau */
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.menu ul li a:hover {
+    color: #ff7f00; /* Orange */
+}
+
+/* Details Section */
+.details {
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.details p {
+    margin: 0.5em 0;
+}
+
+/* Countdown */
+.countdown {
+    background-color: #fff;
+    padding: 2em;
+    text-align: center;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* RSVP Button */
+.rsvp {
+    text-align: center;
+    margin: 2em auto;
+}
+
+.rsvp .btn {
+    display: inline-block;
+    background-color: #3399ff; /* Hellblau */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.rsvp .btn:hover {
+    background-color: #0077cc; /* Dunkleres Blau */
+}
+
+/* Foto-Galerie */
+.photo-gallery {
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.photos {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.photos img {
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
