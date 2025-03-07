@@ -1,3 +1,14 @@
+// Funktion zum Ein- und Ausblenden des Menüs
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    // Wenn das Menü links außerhalb des Bildschirms ist, dann schiebe es nach rechts
+    if (menu.style.left === "-250px") {
+        menu.style.left = "0";
+    } else {
+        menu.style.left = "-250px";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const countdownDate = new Date("September 6, 2025 00:00:00").getTime();
 
