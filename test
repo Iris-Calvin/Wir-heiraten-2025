@@ -1,0 +1,64 @@
+<!DOCTYPE html
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hochzeit von Julia & Max</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff7f7f;
+            color: white;
+            padding: 2em;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        section {
+            margin: 2em;
+            text-align: center;
+        }
+        footer {
+            background-color: #ff7f7f;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Willkommen zu unserer Hochzeit!</h1>
+        <p>Julia & Max</p>
+    </header>
+
+    <section>
+        <h2>Unser großer Tag</h2>
+        <p>Am 25. Mai 2025 feiern wir unsere Hochzeit. Wir können es kaum erwarten, diesen besonderen Moment mit euch zu teilen!</p>
+    </section>
+
+    <section>
+        <h2>Ort der Feier</h2>
+        <p>Die Feier findet in der wunderschönen "Schlosskapelle" in Berlin statt.</p>
+    </section>
+
+    <section>
+        <h2>RSVP</h2>
+        <p>Bitte bestätigt eure Teilnahme bis zum 1. Mai 2025.</p>
+    </section>
+
+    <footer>
+        <p>Wir freuen uns auf euch! ❤️</p>
+    </footer>
+</body>
+</html>
