@@ -8,56 +8,68 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Menü Button -->
-    <div class="menu-btn" onclick="toggleMenu()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+
+    <!-- Passwortschutz -->
+    <div id="login-container">
+        <h2>Willkommen zur Hochzeit von Iris & Calvin</h2>
+        <p>Bitte gib das Passwort ein, um die Webseite zu betreten:</p>
+        <input type="password" id="password-input" placeholder="Passwort">
+        <button onclick="checkPassword()">Login</button>
+        <p id="error-message" style="color: red; display: none;">Falsches Passwort!</p>
     </div>
 
-    <!-- Menü -->
-    <nav id="menu" class="menu">
-        <ul>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#countdown">Countdown</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
-            <li><a href="#photos">Fotos</a></li>
-        </ul>
-    </nav>
+    <!-- Hauptinhalt (zunächst versteckt) -->
+    <div id="main-content" style="display: none;">
 
-    <header>
-        <h1>Hochzeit von Iris & Calvin</h1>
-    </header>
-
-    <section id="details" class="details">
-        <h2>Details zur Hochzeit</h2>
-        <p><strong>Datum:</strong> 6. September 2025</p>
-        <p><strong>Trauungslocation:</strong> Weingut Cobenzl</p>
-        <p><strong>Hochzeitsfeier:</strong> Stiftsrestaurant Leopold</p>
-    </section>
-
-    <section id="countdown" class="countdown">
-        <h2>Countdown zur Hochzeit</h2>
-        <div id="countdown-timer"></div>
-    </section>
-
-    <section id="rsvp" class="rsvp">
-        <h2>RSVP</h2>
-        <p>Bitte bestätige deine Teilnahme über unser <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">RSVP Formular</a></p>
-    </section>
-
-    <section id="photos" class="photo-gallery">
-        <h2>Fotos</h2>
-        <p>Hier werden bald unsere Hochzeitsfotos veröffentlicht.</p>
-        <div class="photos">
-            <img src="https://via.placeholder.com/150" alt="Beispielbild 1">
-            <img src="https://via.placeholder.com/150" alt="Beispielbild 2">
-            <img src="https://via.placeholder.com/150" alt="Beispielbild 3">
+        <!-- Menü Button -->
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-    </section>
 
-    <footer>
-        <p>Wir freuen uns auf deinen Besuch!</p>
-    </footer>
+        <!-- Menü -->
+        <nav id="menu" class="menu">
+            <ul>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#countdown">Countdown</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#photos">Fotos</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <h1>Hochzeit von Iris & Calvin</h1>
+        </header>
+
+        <section id="details" class="details">
+            <h2>Details zur Hochzeit</h2>
+            <p><strong>Datum:</strong> 6. September 2025</p>
+            <p><strong>Trauungslocation:</strong> Weingut Cobenzl</p>
+            <p><strong>Hochzeitsfeier:</strong> Stiftsrestaurant Leopold</p>
+        </section>
+
+        <section id="countdown" class="countdown">
+            <h2>Countdown zur Hochzeit</h2>
+            <div id="countdown-timer"></div>
+        </section>
+
+        <section id="rsvp" class="rsvp">
+            <h2>RSVP</h2>
+            <p>Bitte bestätige deine Teilnahme über unser <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">RSVP Formular</a></p>
+        </section>
+
+        <section id="photos" class="photo-gallery">
+            <h2>Fotos</h2>
+            <input type="file" id="photo-upload" accept="image/*" multiple>
+            <div id="photo-preview"></div>
+        </section>
+
+        <footer>
+            <p>Wir freuen uns auf deinen Besuch!</p>
+        </footer>
+        
+    </div>
+
 </body>
 </html>
