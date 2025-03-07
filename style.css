@@ -1,0 +1,102 @@
+/* Allgemeine Stileinstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #0044cc; /* Blau */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    color: #ff7f00; /* Orange */
+}
+
+/* Details Section */
+.details {
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.details p {
+    margin: 0.5em 0;
+}
+
+/* Countdown */
+.countdown {
+    background-color: #fff;
+    padding: 2em;
+    text-align: center;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* RSVP Button */
+.rsvp {
+    text-align: center;
+    margin: 2em auto;
+}
+
+.rsvp .btn {
+    display: inline-block;
+    background-color: #0044cc; /* Blau */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.rsvp .btn:hover {
+    background-color: #003399;
+}
+
+/* Foto-Galerie */
+.photo-gallery {
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.photos {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.photos img {
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
