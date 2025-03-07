@@ -17,46 +17,49 @@ document.addEventListener("DOMContentLoaded", function () {
     // Countdown bis zum 6. September 2025, 14:00 Uhr
     const countdownDate = new Date("Sep 6, 2025 14:00:00").getTime();
 
-    let x = setInterval(function() {
-        let now = new Date().getTime();
-        let distance = countdownDate - now;
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
 
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        if (distance <= 0) {
+            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit ist heute!";
+        } else {
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown-timer").innerHTML = days + "T " + hours + "H " + minutes + "M " + seconds + "S ";
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen! 🎉";
+            document.getElementById("countdown-timer").innerHTML = `
+                <p>Verbleibende Zeit:</p>
+                <p>${days} Tage ${hours} Stunden ${minutes} Minuten ${seconds} Sekunden</p>
+            `;
         }
-    }, 1000);
-
-    // Menü-Funktion
-    function toggleMenu() {
-        let menu = document.getElementById("menu");
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
 
-    // Menu Button
-    document.querySelector(".menu-btn").addEventListener("click", toggleMenu);
+    setInterval(updateCountdown, 1000);
 
-    // Foto-Upload-Funktion
-    if (document.getElementById("photo-upload")) {
-        document.getElementById("photo-upload").addEventListener("change", function(event) {
-            let preview = document.getElementById("photo-preview");
-            preview.innerHTML = ""; // Alte Bilder löschen
+    // Menü-Öffnen/Schließen
+    function toggleMenu() {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("open");
+    }
 
-            for (let file of event.target.files) {
-                let reader = new FileReader();
-                reader.onload = function(e) {
-                    let img = document.createElement("img");
+    // Foto-Upload (optional, wenn benötigt)
+    const photoUploadInput = document.getElementById("photo-upload");
+    if (photoUploadInput) {
+        photoUploadInput.addEventListener("change", function (event) {
+            const photoPreview = document.getElementById("photo-preview");
+            photoPreview.innerHTML = "";
+
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.createElement("img");
                     img.src = e.target.result;
-                    preview.appendChild(img);
+                    photoPreview.appendChild(img);
                 };
-                reader.readAsDataURL(file);
+                reader.readAsDataURL(files[i]);
             }
         });
     }
