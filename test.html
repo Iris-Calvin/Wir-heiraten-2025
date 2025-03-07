@@ -1,64 +1,47 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hochzeit von Iris & Calvin</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #F7F9EF;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #6495ED;
-            color: white;
-            padding: 2em;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-        }
-        section {
-            margin: 2em;
-            text-align: center;
-        }
-        footer {
-            background-color: #ff7f7f;
-            color: white;
-            padding: 1em;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Willkommen zu unserer Hochzeit!</h1>
-        <p>Iris & Calvin</p>
+        <h1>Hochzeit von Iris & Calvin</h1>
     </header>
 
-    <section>
-        <h2>Unser großer Tag</h2>
-        <p>Am 06. September 2025 feiern wir unsere Hochzeit. Wir können es kaum erwarten, diesen besonderen Moment mit euch zu teilen!</p>
+    <section class="details">
+        <h2>Details zur Hochzeit</h2>
+        <p><strong>Datum:</strong> 6. September 2025</p>
+        <p><strong>Trauungslocation:</strong> Weingut Cobenzl</p>
+        <p><strong>Hochzeitsfeier:</strong> Stiftsrestaurant Leopold</p>
     </section>
 
-    <section>
-        <h2>Ort der Feier</h2>
-        <p>Die Feier findet am wunderschönen Cobenzl statt.</p>
+    <section class="countdown">
+        <h2>Countdown zur Hochzeit</h2>
+        <div id="countdown-timer"></div>
     </section>
 
-    <section>
+    <section class="rsvp">
         <h2>RSVP</h2>
-        <p>Bitte bestätigt eure Teilnahme bis zum 30. März 2025.</p>
+        <p>Bitte bestätige deine Teilnahme über unser <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">RSVP Formular</a></p>
+    </section>
+
+    <section class="photo-gallery">
+        <h2>Fotos</h2>
+        <p>Hier werden bald unsere Hochzeitsfotos veröffentlicht.</p>
+        <!-- Hier kannst du Bilder hinzufügen -->
+        <div class="photos">
+            <img src="https://via.placeholder.com/150" alt="Beispielbild 1">
+            <img src="https://via.placeholder.com/150" alt="Beispielbild 2">
+            <img src="https://via.placeholder.com/150" alt="Beispielbild 3">
+        </div>
     </section>
 
     <footer>
-        <p>Wir freuen uns auf euch! ❤️</p>
+        <p>Wir freuen uns auf deinen Besuch!</p>
     </footer>
 </body>
 </html>
