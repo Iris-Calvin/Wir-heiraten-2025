@@ -1,158 +1,54 @@
-/* Allgemeine Stileinstellungen */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+// Passwortschutz
+function checkPassword() {
+    const enteredPassword = document.getElementById("password-input").value;
+    const correctPassword = "06092025";
+
+    if (enteredPassword === correctPassword) {
+        document.getElementById("login-container").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+    } else {
+        document.getElementById("error-message").style.display = "block";
+    }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+// Menü ein- und ausklappen
+function toggleMenu() {
+    let menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-header {
-    background-color: #3399ff; /* Hellblau */
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
+// Countdown bis zum 6. September 2025, 14:00 Uhr
+const countdownDate = new Date("Sep 6, 2025 14:00:00").getTime();
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countdownDate - now;
 
-h2 {
-    color: #ff7f00; /* Orange */
-}
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-/* Menü Button */
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    z-index: 10; /* Stellt sicher, dass der Button über anderen Inhalten bleibt */
-}
+    document.getElementById("countdown-timer").innerHTML = days + "T " + hours + "H " + minutes + "M " + seconds + "S ";
 
-.menu-btn .bar {
-    width: 30px;
-    height: 5px;
-    background-color: black; /* Menü-Button Balken in schwarz */
-    border-radius: 5px;
-}
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen! 🎉";
+    }
+}, 1000);
 
-/* Menü */
-.menu {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    height: 100%;
-    width: 250px;
-    background-color: #3399ff; /* Hellblau */
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
-}
+// Foto-Upload
+document.getElementById("photo-upload").addEventListener("change", function(event) {
+    let preview = document.getElementById("photo-preview");
+    preview.innerHTML = "";
 
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu ul li {
-    margin: 20px 0;
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-.menu ul li a:hover {
-    color: #ff7f00; /* Orange */
-}
-
-/* Details Section */
-.details {
-    background-color: white;
-    padding: 2em;
-    margin: 2em auto;
-    max-width: 800px;
-    border-radius: 10px;
-}
-
-.details p {
-    margin: 0.5em 0;
-}
-
-/* Countdown */
-.countdown {
-    background-color: #fff;
-    padding: 2em;
-    text-align: center;
-    margin: 2em auto;
-    max-width: 800px;
-    border-radius: 10px;
-}
-
-/* RSVP Button */
-.rsvp {
-    text-align: center;
-    margin: 2em auto;
-}
-
-.rsvp .btn {
-    display: inline-block;
-    background-color: #3399ff; /* Hellblau */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.rsvp .btn:hover {
-    background-color: #0077cc; /* Dunkleres Blau */
-}
-
-/* Foto-Galerie */
-.photo-gallery {
-    background-color: white;
-    padding: 2em;
-    margin: 2em auto;
-    max-width: 800px;
-    border-radius: 10px;
-}
-
-.photos {
-    display: flex;
-    justify-content: space-around;
-    gap: 1em;
-    flex-wrap: wrap;
-}
-
-.photos img {
-    max-width: 150px;
-    border-radius: 10px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-}
+    for (let file of event.target.files) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let img = document.createElement("img");
+            img.src = e.target.result;
+            preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+    }
+});
