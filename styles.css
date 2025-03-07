@@ -1,24 +1,31 @@
+/* Allgemeines Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('blumen-hintergrund.jpg'); /* Füge dein Blumenbild hinzu */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    text-align: center;
+}
+
 /* Passwortschutz */
 #login-container {
-    text-align: center;
-    margin-top: 100px;
+    margin-top: 20vh;
 }
 
-#password-input {
-    padding: 10px;
-    font-size: 16px;
-}
-
-#login-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: black;
+button {
+    background-color: #ff7f50; /* Orange */
     color: white;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
 }
 
-/* Menü */
+button:hover {
+    background-color: #ff5722;
+}
+
+/* Menü-Button */
 .menu-btn {
     position: fixed;
     top: 15px;
@@ -36,45 +43,43 @@
     margin: 6px 0;
 }
 
+/* Menü */
 .menu {
     display: none;
+    background: rgba(0, 56, 168, 0.9);
     position: fixed;
     top: 0;
     left: 0;
     width: 200px;
     height: 100vh;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
 .menu ul {
     list-style: none;
-    padding: 20px;
+    padding: 0;
 }
 
 .menu ul li {
-    margin: 15px 0;
+    margin-bottom: 20px;
 }
 
 .menu ul li a {
+    color: white;
     text-decoration: none;
-    color: black;
     font-size: 18px;
 }
 
-/* Fotobereich */
-#photo-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    justify-content: center;
+/* Countdown */
+.countdown {
+    color: #0038a8; /* Blau */
+    font-size: 24px;
+    margin: 20px;
 }
 
-#photo-preview img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+/* Foto-Galerie */
+.photos img {
+    margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
