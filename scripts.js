@@ -10,7 +10,7 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const countdownDate = new Date("September 6, 2025 00:00:00").getTime();
+    const countdownDate = new Date("März 7, 2025 13:30:00").getTime();
 
     const countdownFunction = setInterval(function () {
         const now = new Date().getTime();
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (timeLeft < 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen!";
+            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen!🎉";
         }
     }, 1000);
 });
