@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (timeLeft < 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen!🎉";
+            document.getElementById("countdown-timer").innerHTML = "Die Hochzeit hat begonnen!";
         }
     }, 1000);
 });
