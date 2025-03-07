@@ -12,10 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.querySelector("button").addEventListener("click", checkPassword);
-
-    // Countdown bis zum 6. September 2025, 14:00 Uhr
-    const countdownDate = new Date("Sep 6, 2025 14:00:00").getTime();
+    // Countdown Timer
+    const countdownDate = new Date("2025-09-06T00:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -44,23 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menu.classList.toggle("open");
     }
 
-    // Foto-Upload (optional, wenn benötigt)
-    const photoUploadInput = document.getElementById("photo-upload");
-    if (photoUploadInput) {
-        photoUploadInput.addEventListener("change", function (event) {
-            const photoPreview = document.getElementById("photo-preview");
-            photoPreview.innerHTML = "";
-
-            const files = event.target.files;
-            for (let i = 0; i < files.length; i++) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const img = document.createElement("img");
-                    img.src = e.target.result;
-                    photoPreview.appendChild(img);
-                };
-                reader.readAsDataURL(files[i]);
-            }
-        });
-    }
+    // Event-Listener für den Menü-Button
+    const menuButton = document.querySelector(".menu-btn");
+    menuButton.addEventListener("click", toggleMenu);
 });
