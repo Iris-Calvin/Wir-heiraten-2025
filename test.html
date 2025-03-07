@@ -8,19 +8,16 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-
     <!-- Passwortschutz -->
     <div id="login-container">
-        <h2>Willkommen zur Hochzeit von Iris & Calvin</h2>
-        <p>Bitte gib das Passwort ein, um die Webseite zu betreten:</p>
-        <input type="password" id="password-input" placeholder="Passwort">
+        <h2>Bitte gib das Passwort ein:</h2>
+        <input type="password" id="password-input" placeholder="Passwort eingeben">
         <button onclick="checkPassword()">Login</button>
-        <p id="error-message" style="color: red; display: none;">Falsches Passwort!</p>
+        <p id="error-message" style="display:none; color:red;">Falsches Passwort!</p>
     </div>
 
-    <!-- Hauptinhalt (zunächst versteckt) -->
-    <div id="main-content" style="display: none;">
-
+    <!-- Hauptinhalt (wird erst nach Login sichtbar) -->
+    <div id="main-content" style="display:none;">
         <!-- Menü Button -->
         <div class="menu-btn" onclick="toggleMenu()">
             <span class="bar"></span>
@@ -61,15 +58,17 @@
 
         <section id="photos" class="photo-gallery">
             <h2>Fotos</h2>
-            <input type="file" id="photo-upload" accept="image/*" multiple>
-            <div id="photo-preview"></div>
+            <p>Hier werden bald unsere Hochzeitsfotos veröffentlicht.</p>
+            <div class="photos">
+                <img src="https://via.placeholder.com/150" alt="Beispielbild 1">
+                <img src="https://via.placeholder.com/150" alt="Beispielbild 2">
+                <img src="https://via.placeholder.com/150" alt="Beispielbild 3">
+            </div>
         </section>
 
         <footer>
             <p>Wir freuen uns auf deinen Besuch!</p>
         </footer>
-        
     </div>
-
 </body>
 </html>
