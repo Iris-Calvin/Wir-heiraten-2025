@@ -18,7 +18,7 @@ const ArrivalInfoComponent = () => {
           <br /> Eingang: 29 Oberer Reisenbergweg, 1190 Wien
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
-          Mit dem Auto:
+          Mit Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Falls du auf der Suche nach einem Parkplatz bist, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
@@ -34,7 +34,7 @@ const ArrivalInfoComponent = () => {
           A38 Busstation: Parkplatz Cobenzl, nur wenige Meter von der Location entfernt.
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
-          Shuttle-Service (optional):
+          Mit Shuttle-Service (optional):
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Für unsere Gäste, die ohne Auto anreisen möchten, bieten wir einen kostenlosen Shuttle-Service vom Bahnhof Wien Heiligenstadt zur Trauungs- und Hochzeitsfeier-Location an.
