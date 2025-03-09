@@ -1,12 +1,15 @@
-import { Container, Stack, Title, Text, Space } from '@mantine/core';
+import { Box, Stack, Title, Text, Space } from '@mantine/core';
 
 const ArrivalInfoComponent = () => {
   return (
-    <Container size="md">
+    <Box pl={'lg'} pr={'lg'}>
       <Stack>
         <Title order={4} fw={700} style={{ textAlign: 'left' }}>
           Anreiseinformationen
         </Title>
+        <Text style={{ textAlign: 'left' }}>
+          Liebe Gäste,
+        </Text>
         <Text style={{ textAlign: 'left' }}>
           Damit ihr stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für euch zusammengefasst. 😊
         </Text>
@@ -49,7 +52,7 @@ const ArrivalInfoComponent = () => {
           Weitere Details und Abfahrtszeiten bekommt ihr nach der Anmeldung zeitgerecht übermittelt.
         </Text>
       </Stack>
-    </Container>
+    </Box>
   );
 };
 
