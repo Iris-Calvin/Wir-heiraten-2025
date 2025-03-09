@@ -8,9 +8,6 @@ const ArrivalInfoComponent = () => {
           Anreiseinformationen
         </Title>
         <Text style={{ textAlign: 'left' }}>
-          Liebe Gäste,
-        </Text>
-        <Text style={{ textAlign: 'left' }}>
           Damit ihr stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für euch zusammengefasst. 😊
         </Text>
         <Space h="lg" />
