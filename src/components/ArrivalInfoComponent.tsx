@@ -22,9 +22,7 @@ const ArrivalInfoComponent = () => {
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Falls du auf der Suche nach einem Parkplatz bist, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
-        </Text>
-        <Text style={{ textAlign: 'left' }}>
-          z.B. Parkplatz Cobenzl
+          <br /> z.B. Parkplatz Cobenzl
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
