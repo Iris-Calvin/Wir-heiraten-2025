@@ -15,10 +15,9 @@ const ArrivalInfoComponent = () => {
           Adresse der Trauungslocation:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          <b>Weingut am Cobenzl</b>
+          Weingut am Cobenzl
           <br /> Eingang: 29 Oberer Reisenbergweg, 1190 Wien
         </Text>
-        <Space h="lg" />
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit dem Auto:
         </Text>
@@ -26,9 +25,8 @@ const ArrivalInfoComponent = () => {
           Falls ihr auf der Suche nach einem Parkplatz seid, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          <b>Parkplatz Cobenzl</b>
+          Parkplatz Cobenzl
         </Text>
-        <Space h="lg" />
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
         </Text>
@@ -36,9 +34,8 @@ const ArrivalInfoComponent = () => {
           Der nächstgelegene Bahnhof ist Wien Heiligenstadt, ca. 17 Minuten mit öffentlichen Verkehrsmitteln.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          <b>A38 Busstation:</b> Parkplatz Cobenzl, nur wenige Meter von der Location entfernt.
+          A38 Busstation: Parkplatz Cobenzl, nur wenige Meter von der Location entfernt.
         </Text>
-        <Space h="lg" />
         <Text fw={500} style={{ textAlign: 'left' }}>
           Shuttle-Service (optional):
         </Text>
