@@ -36,7 +36,7 @@ const PresentsComponent = () => {
                     </List.Item>
                     <List.Item>
                         <Text>
-                            Sammler Münzprägungen (Bsp Münze Austria)
+                            Sammler Münzprägungen (Bsp. Münze Austria)
                         </Text>
                     </List.Item>
                 </List>
