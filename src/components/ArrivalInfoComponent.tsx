@@ -10,7 +10,6 @@ const ArrivalInfoComponent = () => {
         <Text style={{ textAlign: 'left' }}>
           Damit du stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für dich zusammengefasst. 😊
         </Text>
-        <Space h="lg" />
         <Text fw={500} style={{ textAlign: 'left' }}>
           Adresse der Trauungslocation:
         </Text>
@@ -31,7 +30,7 @@ const ArrivalInfoComponent = () => {
           Mit öffentlichen Verkehrsmitteln:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Der nächstgelegene Bahnhof ist Wien Heiligenstadt, ca. 17 Minuten mit öffentlichen Verkehrsmitteln.
+          Der nächstgelegene Bahnhof ist Wien Heiligenstadt, ca. 20 Minuten mit öffentlichen Verkehrsmitteln.
         </Text>
         <Text style={{ textAlign: 'left' }}>
           A38 Busstation: Parkplatz Cobenzl, nur wenige Meter von der Location entfernt.
