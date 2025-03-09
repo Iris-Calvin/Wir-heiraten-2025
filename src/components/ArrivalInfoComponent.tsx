@@ -8,39 +8,37 @@ const ArrivalInfoComponent = () => {
           Wie kommst du zur Feier? 
         </Title>
         <Text style={{ textAlign: 'left' }}>
-          Damit du stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für dich zusammengefasst. 😊
+          Hier findest du alle Infos für eine stressfreie Anreise. 😊
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
-          Adresse der Trauungslocation:
+          Trauungslocation:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Weingut am Cobenzl
-          <br /> Eingang: 29 Oberer Reisenbergweg, 1190 Wien
+          Weingut am Cobenzl, 29 Oberer Reisenbergweg, 1190 Wien
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Falls du auf der Suche nach einem Parkplatz bist, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
-          <br /> z.B. Parkplatz Cobenzl
+          Parkmöglichkeiten sind direkt an den Locations verfügbar (z.B. Parkplatz Cobenzl).
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Der nächstgelegene Bahnhof ist Wien Heiligenstadt, ca. 20 Minuten mit öffentlichen Verkehrsmitteln.
+          Bahnhof Wien Heiligenstadt, 20 Minuten mit öffentlichen Verkehrsmitteln.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          A38 Busstation: Parkplatz Cobenzl, nur wenige Meter von der Location entfernt.
+          A38 Busstation: Parkplatz Cobenzl, nur wenige Meter entfernt.
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
-          Mit Shuttle-Service (optional):
+          Shuttle-Service (optional):
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Für unsere Gäste, die ohne Auto anreisen möchten, bieten wir einen kostenlosen Shuttle-Service vom Bahnhof Wien Heiligenstadt zur Trauungs- und Hochzeitsfeier-Location an.
+          Wir bieten einen kostenlosen Shuttle-Service vom Bahnhof Wien Heiligenstadt zur Location.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Bei Interesse bitten wir dies bei der Anmeldung anzugeben. Die Informationen zur Abfahrt werden zeitnah übermittelt.
+          Bitte bei Anmeldung angeben. Weitere Infos zur Abfahrt folgen.
         </Text>
       </Stack>
     </Box>
