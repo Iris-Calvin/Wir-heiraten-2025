@@ -7,7 +7,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Router basename='wedding-invitation'>
+    <Router basename='Wir-heiraten-2025'>
       <App />
     </Router>
   </StrictMode>,
