@@ -10,7 +10,7 @@ const SleepoverComponent = () => {
             <Stack>
                 <Box>
                     <Title order={4} fw={700} style={{ textAlign: 'left' }}>
-                        Benötigst du/ihr eine Übernachtungsmöglichkeit?
+                        Benötigst du eine Übernachtungsmöglichkeit?
                     </Title>
                     <Text style={{ textAlign: 'left' }}>
                         Folgende Übernachtungsmöglichkeiten stehen in der Nähe zur Verfügung:
@@ -74,7 +74,7 @@ const SleepoverComponent = () => {
                     </List>
                 </Box>
                 <Text style={{ textAlign: 'left' }}>
-                Solltest du / Solltet ihr eine Übernachtungsmöglichkeit benötigen, bitten wir dich / euch, diese eigenständig zu organisieren.
+                Solltest du eine Übernachtungsmöglichkeit benötigen, bitten wir dich, diese eigenständig zu organisieren.
                 </Text>
             </Stack>
         </Container>
