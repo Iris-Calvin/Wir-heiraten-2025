@@ -5,10 +5,10 @@ const ArrivalInfoComponent = () => {
     <Box pl={'lg'} pr={'lg'}>
       <Stack>
         <Title order={4} fw={700} style={{ textAlign: 'left' }}>
-          Anreiseinformationen
+          Wie kommst du zur Feier? 
         </Title>
         <Text style={{ textAlign: 'left' }}>
-          Damit ihr stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für euch zusammengefasst. 😊
+          Damit du stressfrei zu unserer Hochzeit anreisen könnt, haben wir hier alle wichtigen Infos für dich zusammengefasst. 😊
         </Text>
         <Space h="lg" />
         <Text fw={500} style={{ textAlign: 'left' }}>
@@ -22,10 +22,10 @@ const ArrivalInfoComponent = () => {
           Mit dem Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Falls ihr auf der Suche nach einem Parkplatz seid, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
+          Falls du auf der Suche nach einem Parkplatz bist, gibt es ausreichend Parkmöglichkeiten direkt an den Locations.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Parkplatz Cobenzl
+          z.B. Parkplatz Cobenzl
         </Text>
         <Text fw={500} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
@@ -40,10 +40,10 @@ const ArrivalInfoComponent = () => {
           Shuttle-Service (optional):
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Für unsere Gäste, die ohne Auto anreisen, bieten wir einen Shuttle-Service vom Wien Heiligenstadt Bahnhof zur Trauungslocation und Hochzeitsfeierlocation an.
+          Für unsere Gäste, die ohne Auto anreisen möchten, bieten wir einen kostenlosen Shuttle-Service vom Bahnhof Wien Heiligenstadt zur Trauungs- und Hochzeitsfeier-Location an.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Weitere Details und Abfahrtszeiten bekommt ihr nach der Anmeldung zeitgerecht übermittelt.
+          Bei Interesse bitten wir dies bei der Anmeldung anzugeben. Die Informationen zur Abfahrt werden zeitnah übermittelt.
         </Text>
       </Stack>
     </Box>
