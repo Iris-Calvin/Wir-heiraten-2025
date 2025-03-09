@@ -6,17 +6,17 @@ const PresentsComponent = () => {
         <Stack>
             <Box pl={'lg'}>
                 <Title order={4} fw={700} style={{ textAlign: 'left' }}>
-                    Ihr denkt an Geschenke?
+                    Du denkst an Geschenke?
                 </Title>
                 <Text style={{ textAlign: 'left' }}>
-                    Eure Anwesenheit bei unserer Hochzeit ist für uns das größte Geschenk (und die leichteste Gepäckoption)! 
+                    Deine Anwesenheit bei unserer Hochzeit ist für uns das größte Geschenk (und die leichteste Gepäckoption)! 
                 </Text>
                 <Text style={{ textAlign: 'left' }}>
-                Wenn ihr uns trotzdem noch was Gutes tun wollt, freut sich unser Sparschwein über Futter – damit wir unsere Koffer für die Flitterwochen ordentlich vollpacken können!
+                Wenn du uns trotzdem noch was Gutes tun wollt, freut sich unser Sparschwein über Futter – damit wir unsere Koffer für die Flitterwochen ordentlich vollpacken können!
                 </Text>
                 <Space h="lg"/>
                 <Text fw={500} style={{ textAlign: 'left' }}>
-                    Falls ihr kein Freund von Sparschweinfutter seid, haben wir hier ein paar Alternativen für euch:
+                    Falls du kein Freund von Sparschweinfutter bist, haben wir hier ein paar Alternativen für euch:
                 </Text>
                 <List style={{ textAlign: 'left' }} pt={'sm'} pl={'lg'} pr={'xl'}>
                     <List.Item>
