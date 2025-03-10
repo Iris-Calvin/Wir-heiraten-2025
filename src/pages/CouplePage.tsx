@@ -55,27 +55,38 @@ const CouplePage = () => {
 
     return (
         <Box className={styles.section} style={{
-            position: 'relative',
-            minHeight: '100vh', // Sicherstellen, dass der Container genug Höhe hat
-            backgroundImage: `url(${blumen_ende_home})`,  // Hintergrundbild setzen
-            backgroundPosition: 'bottom left',           // Bild an der unteren linken Ecke positionieren
-            backgroundSize: 'auto',                      // Bildgröße anpassen
-            backgroundRepeat: 'no-repeat',               // Wiederholung des Bildes verhindern
-            zIndex: -1,                                  // Bild bleibt im Hintergrund
+            position: 'relative',  // Container als Bezugspunkt für das Bild
+            minHeight: '100vh',    // Sicherstellen, dass der Container mindestens so hoch wie der Bildschirm ist
         }}>
+            {/* Das Bild von couple3 bleibt wie vorher */}
             <Image src={couple3} alt="couple" fit="cover" style={{
-                maxHeight: "50vh",
+                maxHeight: "50vh",  // Bildhöhe begrenzen
+                zIndex: 1,          // Das Bild bleibt im Vordergrund
             }} />
-            <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300} />
             
-            <Container style={{ position: 'relative' }}>
-                <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem', zIndex: 2 }}>Iris & Calvin</Title>
+            {/* Das Blumenbild im Hintergrund */}
+            <Image 
+                src={blumen_ende_home} 
+                alt="blumen_ende_home" 
+                w={isMobile ? 200 : 300} 
+                style={{
+                    position: 'absolute',   // Absolut positionieren
+                    left: 0,                // Am linken Rand
+                    bottom: 0,              // Am unteren Rand
+                    zIndex: -1,             // Im Hintergrund
+                    marginBottom: '20px',   // Optional: Abstand nach unten
+                }} 
+            />
+
+            <Container style={{ position: 'relative', zIndex: 2 }}>
+                <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem' }}>Iris & Calvin</Title>
                 <CountdownTimer />
-                <Text size="xl" pb={'lg'} style={{ zIndex: 2 }}>06 / 09 / 2025</Text>
+                <Text size="xl" pb={'lg'}>06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
         </Box>
     );
 };
+
 
 export default CouplePage;
