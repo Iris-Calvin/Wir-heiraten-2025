@@ -27,36 +27,25 @@ const SleepoverComponent = () => {
                                 Hotel-Residenz Schrannenhof
                             </Anchor>
                         </List.Item>
-                        <List.Item>
+                            <List.Item>
                             <Text fw={700}>
-                                Hotel Restaurant Anker
+                                Hotel Anker 
                             </Text>
                             <Text>
                                 (Fußmarsch entfernt)
                             </Text>
-                            <Anchor href="https://www.schrannenhof.at/">
-                                Hotel Restaurant Anker
+                            <Anchor href="https://www.hotel-anker.at/">
+                                Hotel Anker
                             </Anchor>
                         </List.Item>
-                        <List.Item>
-                            <Text fw={700}>
-                                Hotel Anker in Klosterneuburg | Gästezimmer und Restaurant
-                            </Text>
-                            <Text>
-                                (Fußmarsch entfernt)
-                            </Text>
-                            <Anchor href="https://www.schrannenhof.at/">
-                                Hotel Anker in Klosterneuburg
-                            </Anchor>
-                        </List.Item>
-                        <List.Item>
+                            <List.Item>
                             <Text fw={700}>
                                 Markgraf Hotel
                             </Text>
                             <Text>
                                 (5 Min per Auto, 20 Min zu Fuß)
                             </Text>
-                            <Anchor href="https://www.schrannenhof.at/">
+                            <Anchor href="https://www.zummarkgraf.at/hotel/">
                                 Markgraf Hotel
                             </Anchor>
                         </List.Item>
@@ -67,7 +56,7 @@ const SleepoverComponent = () => {
                             <Text>
                                 (25 Min per Auto)
                             </Text>
-                            <Anchor href="https://www.schrannenhof.at/">
+                            <Anchor href="https://www.living-hotels.com/standorte/wien/living-hotel-kaiser-franz-joseph/">
                                 Living Hotel Kaiser Franz Joseph
                             </Anchor>
                         </List.Item>
@@ -83,3 +72,4 @@ const SleepoverComponent = () => {
 };
 
 export default SleepoverComponent;
+
