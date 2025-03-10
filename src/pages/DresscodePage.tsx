@@ -61,7 +61,7 @@ const DresscodePage = () => {
                             <Box pb={"md"}>
                                 <Title order={6}>Damen</Title>
                                 <Text size="11pt">
-                                Cocktail Chic, bitte keine weißen Kleider - die Farbe ist für die Braut reserviert. 
+                                Cocktail Chic – bitte keine weißen Kleider, die sind der Braut vorbehalten. Ein Hosenanzug ist natürlich ebenfalls willkommen. 😉
 
                                 </Text>
                             </Box>
