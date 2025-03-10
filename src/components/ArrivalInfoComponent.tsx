@@ -22,7 +22,7 @@ const ArrivalInfoComponent = () => {
           Mit dem Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Es stehen ausreichend Parkmöglichkeiten direkt an den Locations zur Verfügung, z. B. am Parkplatz Cobenzl.
+          Es stehen ausreichend Parkmöglichkeiten direkt an den Locations zur Verfügung, z.B. am Parkplatz Cobenzl.
         </Text>
               <Space h="md"/>
         <Text fw={700} style={{ textAlign: 'left' }}>
