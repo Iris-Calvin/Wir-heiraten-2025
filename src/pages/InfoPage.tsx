@@ -10,7 +10,7 @@ const CouplePage = () => {
     const isDesktop = useMediaQuery('(max-width: 1200px)');
 
     return (
-        <Container size={"sm"}>
+       <Container size="sm" style={{ overflowY: 'auto' }}>
             <Box pt={"2rem"} pb={"2rem"} >
                 <PresentsComponent />
             </Box>
