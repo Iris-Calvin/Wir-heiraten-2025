@@ -10,12 +10,14 @@ const ArrivalInfoComponent = () => {
         <Text style={{ textAlign: 'left' }}>
           Hier findest du alle Infos für eine stressfreie Anreise. 😊
         </Text>
+              <Space h="lg"/>
         <Text fw={500} style={{ textAlign: 'left' }}>
           Trauungslocation:
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Weingut am Cobenzl, 29 Oberer Reisenbergweg, 1190 Wien
         </Text>
+              <Space h="lg"/>
         <Text fw={700} style={{ textAlign: 'left' }}>
           Mit Auto:
         </Text>
