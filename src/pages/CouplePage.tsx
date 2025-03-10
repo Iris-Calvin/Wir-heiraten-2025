@@ -33,7 +33,7 @@ const CountdownTimer = () => {
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                setTimeLeft(`${days} Tage ${hours} Stunden ${minutes} Minuten ${seconds} Sekunden`);
+                setTimeLeft(`${days} Tg ${hours} Std ${minutes} Min ${seconds} Sek`);
             }
             setLoading(false); // Stop loading after first update
         };
@@ -47,7 +47,7 @@ const CountdownTimer = () => {
         return () => clearInterval(interval);
     }, [targetDate]);
 
-    return loading ? <Loader color="blue" /> : <Text size="md">{timeLeft}</Text>;
+    return loading ? <Loader color="blue" /> : <Text size="xl">{timeLeft}</Text>;
 };
 
 const CouplePage = () => {
