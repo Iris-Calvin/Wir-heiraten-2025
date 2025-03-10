@@ -16,7 +16,7 @@ import blumen_unterhalb from '../assets/blumen_unterhalb.png';
 import blumen_ende_home from '../assets/blumen_ende_home.png';
 
 const CountdownTimer = () => {
-    const targetDate = new Date("2025-09-06T00:00:00").getTime();
+    const targetDate = new Date("2025-09-06T14:00:00").getTime();
     const [timeLeft, setTimeLeft] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -26,14 +26,14 @@ const CountdownTimer = () => {
             const distance = targetDate - now;
 
             if (distance <= 0) {
-                setTimeLeft("Die Hochzeit ist heute!");
+                setTimeLeft("Die Hochzeit hat begonnen! 🎉");
             } else {
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                //const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                setTimeLeft(`${days} Tage ${hours} Stunden ${minutes} Minuten`);
+                setTimeLeft(`${days} Tage ${hours} Stunden ${minutes} Minuten ${seconds} Sekunden`);
             }
             setLoading(false); // Stop loading after first update
         };
