@@ -54,26 +54,31 @@ const CouplePage = () => {
     const isMobile = useMediaQuery('(max-width: 576px)');
 
     return (
-        <Box className={styles.section}style={{
+        <Box className={styles.section} style={{
             position: 'relative',
         }}>
             <Image src={couple3} alt="couple" fit="cover" style={{
                 maxHeight: "50vh",
             }} />
-            <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300}/>
+            <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300} />
             <Container>
                 <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem' }}>Iris & Calvin</Title>
                 <CountdownTimer />
                 <Text size="xl" pb={'lg'}>06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
-            <Image src={blumen_ende_home} alt="blumen_ende_home" w={isMobile ? 200 : 300} style={{
-                position: 'absolute',
-                left: 0,
-                bottom: 0,
-                zIndex: 1, // Stellen Sie sicher, dass das Bild im Hintergrund bleibt
-                marginBottom: '20px', // Optional: Ein kleiner Abstand nach unten
-            }}/>
+            <Image 
+                src={blumen_ende_home} 
+                alt="blumen_ende_home" 
+                w={isMobile ? 200 : 300} 
+                style={{
+                    position: 'absolute',
+                    left: 0,
+                    bottom: 0,
+                    zIndex: -1,  // Bild im Hintergrund
+                    marginBottom: '20px',  // Optional: Abstände
+                }} 
+            />
         </Box>
     );
 };
