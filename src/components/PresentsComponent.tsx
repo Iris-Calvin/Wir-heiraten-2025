@@ -12,11 +12,11 @@ const PresentsComponent = () => {
                     Deine Anwesenheit bei unserer Hochzeit ist für uns das größte Geschenk (und die leichteste Gepäckoption)! 
                 </Text>
                 <Text style={{ textAlign: 'left' }}>
-                Wenn du uns trotzdem noch was Gutes tun wollt, freut sich unser Sparschwein über Futter – damit wir unsere Koffer für die Flitterwochen ordentlich vollpacken können!
+                Wenn du uns trotzdem noch was Gutes tun willst, freut sich unser Sparschwein über Futter – damit wir unsere Koffer für die Flitterwochen ordentlich vollpacken können!
                 </Text>
                 <Space h="lg"/>
                 <Text fw={500} style={{ textAlign: 'left' }}>
-                    Falls du kein Freund von Sparschweinfutter bist, haben wir hier ein paar Alternativen für euch:
+                    Falls du kein Freund von Sparschweinfutter bist, haben wir hier ein paar Alternativen für dich:
                 </Text>
                 <List style={{ textAlign: 'left' }} pt={'sm'} pl={'lg'} pr={'xl'}>
                     <List.Item>
