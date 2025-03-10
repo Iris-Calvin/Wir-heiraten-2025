@@ -61,10 +61,10 @@ const CouplePage = () => {
                 maxHeight: "50vh",
             }} />
             <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300} />
-            <Container>
-                <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem' }}>Iris & Calvin</Title>
+            <Container style={{ position: 'relative' }}>
+                <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem', zIndex: 2 }}>Iris & Calvin</Title>
                 <CountdownTimer />
-                <Text size="xl" pb={'lg'}>06 / 09 / 2025</Text>
+                <Text size="xl" pb={'lg'} style={{ zIndex: 2 }}>06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
             <Image 
