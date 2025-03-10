@@ -56,27 +56,33 @@ const CouplePage = () => {
     return (
         <Box className={styles.section} style={{
             position: 'relative',
+            minHeight: '100vh', // Sicherstellen, dass der Container genug Höhe hat
         }}>
+            {/* Das Bild von couple3 bleibt wie vorher */}
             <Image src={couple3} alt="couple" fit="cover" style={{
                 maxHeight: "50vh",
             }} />
             <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300} />
+            
             <Container style={{ position: 'relative' }}>
                 <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem', zIndex: 2 }}>Iris & Calvin</Title>
                 <CountdownTimer />
                 <Text size="xl" pb={'lg'} style={{ zIndex: 2 }}>06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
+            
+            {/* Blume im Hintergrund, z-index -1 sorgt dafür, dass es hinter dem Text bleibt */}
             <Image 
                 src={blumen_ende_home} 
                 alt="blumen_ende_home" 
                 w={isMobile ? 200 : 300} 
                 style={{
                     position: 'absolute',
-                    left: 0,
-                    bottom: 0,
-                    zIndex: -1,  // Bild im Hintergrund
-                    marginBottom: '20px',  // Optional: Abstände
+                    left: '0',           // Am linken Rand positionieren
+                    bottom: '0',         // Am unteren Rand positionieren
+                    zIndex: -1,          // Bild im Hintergrund
+                    marginBottom: '20px',// Optional: Abstand nach unten
+                    width: '100%',       // Optional: Bild über die gesamte Breite ausdehnen
                 }} 
             />
         </Box>
