@@ -92,7 +92,7 @@ const ProcessPage = () => {
                     direction="column"
                     wrap="wrap"
                 >
-                    <Title pt={"1.5rem"} pb={"1.5rem"} className={styles.special}>Ablaufplan</Title>
+                    <Title pt={"1.5rem"} pb={"1.5rem"} className={styles.special}>Hochzeitsplan</Title>
                     {timelineData ? (
                         <Box style={{ width: "100%" }}>
                             <Timeline position="alternate">
