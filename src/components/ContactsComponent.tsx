@@ -9,9 +9,13 @@ const ContactsComponent = () => {
                     <Title order={4} fw={700} style={{ textAlign: 'left' }}>
                         Du brauchst einen Ansprechpartner?
                     </Title>
-                    <Text style={{ textAlign: 'left' }}>
-                        Bitte wende dich an die Trauzeugen.
-                    </Text>
+                   <Text style={{ textAlign: 'left' }}>
+                   Bitte wende dich an die Trauzeugen:
+                  </Text>
+                  <List style={{ textAlign: 'left' }} pl={'lg'}>
+                      <List.Item>🩷Sabrina: +43 699 17043553</List.Item>
+                      <List.Item>💙Quentin: +43 699 17711313</List.Item>
+                  </List>
                 </Box>
             </Stack>
         </Container>
