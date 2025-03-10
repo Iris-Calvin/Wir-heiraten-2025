@@ -19,28 +19,25 @@ const ArrivalInfoComponent = () => {
         </Text>
               <Space h="lg"/>
         <Text fw={700} style={{ textAlign: 'left' }}>
-          Mit Auto:
+          Mit dem Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Parkmöglichkeiten sind direkt an den Locations verfügbar (z.B. Parkplatz Cobenzl).
+          Es stehen ausreichend Parkmöglichkeiten direkt an den Locations zur Verfügung, z. B. am Parkplatz Cobenzl.
         </Text>
         <Text fw={700} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Bahnhof Wien Heiligenstadt, 20 Minuten mit öffentlichen Verkehrsmitteln.
-        </Text>
-        <Text style={{ textAlign: 'left' }}>
-          A38 Busstation: Parkplatz Cobenzl, nur wenige Meter entfernt.
+          Bahnhof Wien Heiligenstadt – mit der Buslinie A38 bis zur Haltestelle Parkplatz Cobenzl (Fahrtzeit ca. 20 Minuten).
         </Text>
         <Text fw={700} style={{ textAlign: 'left' }}>
           Shuttle-Service (optional):
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Wir bieten einen <b>kostenlosen Shuttle-Service</b> vom Bahnhof Wien Heiligenstadt zur Location.
+          Für alle Gäste die nicht mit Auto anreisen wollen, bieten wir einen <b>kostenlosen Shuttle-Service</b> vom Bahnhof Wien Heiligenstadt zu den Locations an.
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Bitte bei Anmeldung angeben. Weitere Infos zur Abfahrt folgen.
+          Bitte bei Anmeldung angeben. Die genauen Abfahrtszeiten teilen wir rechtzeitig mit.
         </Text>
       </Box>
    </Stack>
