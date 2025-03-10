@@ -16,13 +16,13 @@ const ArrivalInfoComponent = () => {
         <Text style={{ textAlign: 'left' }}>
           Weingut am Cobenzl, 29 Oberer Reisenbergweg, 1190 Wien
         </Text>
-        <Text fw={500} style={{ textAlign: 'left' }}>
+        <Text fw={700} style={{ textAlign: 'left' }}>
           Mit Auto:
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Parkmöglichkeiten sind direkt an den Locations verfügbar (z.B. Parkplatz Cobenzl).
         </Text>
-        <Text fw={500} style={{ textAlign: 'left' }}>
+        <Text fw={700} style={{ textAlign: 'left' }}>
           Mit öffentlichen Verkehrsmitteln:
         </Text>
         <Text style={{ textAlign: 'left' }}>
@@ -31,11 +31,11 @@ const ArrivalInfoComponent = () => {
         <Text style={{ textAlign: 'left' }}>
           A38 Busstation: Parkplatz Cobenzl, nur wenige Meter entfernt.
         </Text>
-        <Text fw={500} style={{ textAlign: 'left' }}>
+        <Text fw={700} style={{ textAlign: 'left' }}>
           Shuttle-Service (optional):
         </Text>
         <Text style={{ textAlign: 'left' }}>
-          Wir bieten einen kostenlosen Shuttle-Service vom Bahnhof Wien Heiligenstadt zur Location.
+          Wir bieten einen <b>kostenlosen Shuttle-Service</b> vom Bahnhof Wien Heiligenstadt zur Location.
         </Text>
         <Text style={{ textAlign: 'left' }}>
           Bitte bei Anmeldung angeben. Weitere Infos zur Abfahrt folgen.
