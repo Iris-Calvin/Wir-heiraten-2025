@@ -72,6 +72,7 @@ const CouplePage = () => {
                 left: 0,
                 bottom: 0,
                 zIndex: 1, // Stellen Sie sicher, dass das Bild im Hintergrund bleibt
+                marginBottom: '20px', // Optional: Ein kleiner Abstand nach unten
             }}/>
         </Box>
     );
