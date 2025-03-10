@@ -47,7 +47,7 @@ const CountdownTimer = () => {
         return () => clearInterval(interval);
     }, [targetDate]);
 
-    return loading ? <Loader color="blue" /> : <Text size="xl">{timeLeft}</Text>;
+    return loading ? <Loader color="blue" /> : <Text size="md">{timeLeft}</Text>;
 };
 
 const CouplePage = () => {
