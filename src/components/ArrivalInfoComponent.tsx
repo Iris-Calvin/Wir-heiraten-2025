@@ -2,8 +2,8 @@ import { Box, Stack, Title, Text, Space } from '@mantine/core';
 
 const ArrivalInfoComponent = () => {
   return (
-    <Box pl={'lg'} pr={'lg'}>
-      <Stack>
+     <Stack>
+            <Box pl={'lg'}>
         <Title order={4} fw={700} style={{ textAlign: 'left' }}>
           Wie kommst du zur Feier? 
         </Title>
@@ -40,8 +40,9 @@ const ArrivalInfoComponent = () => {
         <Text style={{ textAlign: 'left' }}>
           Bitte bei Anmeldung angeben. Weitere Infos zur Abfahrt folgen.
         </Text>
-      </Stack>
-    </Box>
+      </Box>
+   </Stack>
+   
   );
 };
 
