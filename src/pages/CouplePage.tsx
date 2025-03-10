@@ -71,6 +71,7 @@ const CouplePage = () => {
                 position: 'absolute',
                 left: 0,
                 bottom: 0,
+                zIndex: 1, // Stellen Sie sicher, dass das Bild im Hintergrund bleibt
             }}/>
         </Box>
     );
