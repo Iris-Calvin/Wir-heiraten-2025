@@ -1,4 +1,4 @@
-import { Container, Box, Stack, Title, Text, List } from '@mantine/core';
+import { Container, Box, Stack, Title, Text } from '@mantine/core';
 
 const ContactsComponent = () => {
   return (
@@ -11,10 +11,12 @@ const ContactsComponent = () => {
           <Text style={{ textAlign: 'left' }}>
             Bitte wende dich an die Trauzeugen:
           </Text>
-          <List style={{ textAlign: 'left' }} pl={'lg'}>
-            <List.Item>🩷 Sabrina: +43 699 17043553</List.Item>
-            <List.Item>💙 Quentin: +43 699 17711313</List.Item>
-          </List>
+          <Text style={{ textAlign: 'left', paddingLeft: '1rem' }}>
+            🩷 Sabrina: +43 699 17043553
+          </Text>
+          <Text style={{ textAlign: 'left', paddingLeft: '1rem' }}>
+            💙 Quentin: +43 699 17711313
+          </Text>
         </Box>
       </Stack>
     </Container>
