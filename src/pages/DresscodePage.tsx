@@ -72,7 +72,7 @@ const DresscodePage = () => {
                                 </Text>
                             
                                 <Text size="11pt">
-                                    Seid kreativ und bleibt innerhalb diser kleinen Style-Guide-Grenzen - dann sehen wir alle auf den Fotos fantastisch aus!
+                                    Seid kreativ und bleibt innerhalb dieser kleinen Style-Guide-Grenzen - dann sehen wir alle auf den Fotos fantastisch aus!
                                 </Text>
                             </Box>
                         </Flex>
