@@ -62,7 +62,7 @@ const CouplePage = () => {
             }} />
             <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300}/>
             <Container>
-                <Title className={styles.special} pb={'lg'}>Iris & Calvin</Title>
+                <Title className={styles.special} pb={'xl'}>Iris & Calvin</Title>
                 <CountdownTimer />
                 <Text size="xl" pb={'lg'}>06 / 09 / 2025</Text>
                 <RSVPComponent />
