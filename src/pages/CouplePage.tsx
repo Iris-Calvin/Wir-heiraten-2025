@@ -54,39 +54,30 @@ const CouplePage = () => {
     const isMobile = useMediaQuery('(max-width: 576px)');
 
     return (
-        <Box className={styles.section} style={{
-            position: 'relative',  // Container als Bezugspunkt für das Bild
-            minHeight: '100vh',    // Sicherstellen, dass der Container mindestens so hoch wie der Bildschirm ist
+        <Box className={styles.section}style={{
+            position: 'relative',
         }}>
-            {/* Das Bild von couple3 bleibt wie vorher */}
             <Image src={couple3} alt="couple" fit="cover" style={{
-                maxHeight: "50vh",  // Bildhöhe begrenzen
-                zIndex: 1,          // Das Bild bleibt im Vordergrund
+                maxHeight: "50vh",
             }} />
-            
-            {/* Das Blumenbild im Hintergrund */}
-            <Image 
-                src={blumen_ende_home} 
-                alt="blumen_ende_home" 
-                w={isMobile ? 200 : 300} 
-                style={{
-                    position: 'absolute',   // Absolut positionieren
-                    left: 0,                // Am linken Rand
-                    bottom: 0,              // Am unteren Rand
-                    zIndex: -1,             // Im Hintergrund
-                    marginBottom: '20px',   // Optional: Abstand nach unten
-                }} 
-            />
-
-            <Container style={{ position: 'relative', zIndex: 2 }}>
+            <Image src={blumen_unterhalb} alt="blumen_unterhalb" w={300}/>
+            <Container>
                 <Title className={styles.special} pb={'lg'} style={{ fontSize: '3rem' }}>Iris & Calvin</Title>
                 <CountdownTimer />
                 <Text size="xl" pb={'lg'}>06 / 09 / 2025</Text>
                 <RSVPComponent />
             </Container>
+            <Image src={blumen_ende_home} alt="blumen_ende_home" w={isMobile ? 200 : 300} style={{
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                zIndex: 1, // Stellen Sie sicher, dass das Bild im Hintergrund bleibt
+
+            }}/>
         </Box>
     );
 };
+
 
 
 export default CouplePage;
