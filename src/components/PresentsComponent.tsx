@@ -16,7 +16,7 @@ const PresentsComponent = () => {
                 </Text>
                 <Space h="lg"/>
                 <Text fw={500} style={{ textAlign: 'left' }}>
-                    Falls du kein Freund von Sparschweinfutter bist, haben wir hier ein paar Alternativen für dich:
+                    Falls du kein Freund von Sparschweinfutter bist, haben wir hier ein paar Ideen für dich:
                 </Text>
                 <List style={{ textAlign: 'left' }} pt={'sm'} pl={'lg'} pr={'xl'}>
                     <List.Item>
