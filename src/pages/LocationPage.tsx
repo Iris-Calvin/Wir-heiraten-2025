@@ -16,7 +16,7 @@ const LocationPage = () => {
                 <Box>
                     <Text fw={700}>Trauung:</Text>
                     <Text size="11pt">
-                        <Anchor href="https://www.google.com/maps/search/?q=Weingut+Cobenzl" target="_blank">
+                        <Anchor href="https://maps.app.goo.gl/oYMKxCtfNKPcTKHa6?g_st=aw" target="_blank">
                             Weingut Cobenzl
                         </Anchor>
                     </Text>
