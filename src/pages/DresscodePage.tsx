@@ -70,9 +70,24 @@ const DresscodePage = () => {
                                 <Text size="11pt">
                                     Schwarze, graue oder blaue Anzüge sind selbstverständlich eine sichere Wahl. Wer aber mutig ist, darf sich gerne etwas aus der Fabpalette wagen!
                                 </Text>
+                              
+                                <Box pb={"md"} />
                             
                                 <Text size="11pt">
                                     Seid kreativ und bleibt innerhalb dieser kleinen Style-Guide-Grenzen - dann sehen wir alle auf den Fotos fantastisch aus!
+                                </Text>
+                            </Box>
+                            <Box pb={"md"}>
+                                <Title order={6}>Dresscode-Update</Title>
+                                <Text size="11pt">
+                                    Da wir uns unter freiem Himmel das Ja-Wort geben, sind leichte Stoffe wie Leinen sowie schicke Hüte natürlich erlaubt.
+                                </Text>
+
+                                <Box pb={"md"} />
+
+                                <Text size="11pt">
+                                    Der Farbcode dient nur als Orientierung – keine Sorge, wenn euer Outfit nicht exakt passt. Hauptsache, ihr fühlt euch wohl und bleibt dem festlichen Spätsommer-Look treu. 
+                                    Wir freuen uns auf euch! 
                                 </Text>
                             </Box>
                         </Flex>
