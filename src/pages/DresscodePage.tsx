@@ -77,7 +77,7 @@ const DresscodePage = () => {
                                     Seid kreativ und bleibt innerhalb dieser kleinen Style-Guide-Grenzen - dann sehen wir alle auf den Fotos fantastisch aus!
                                 </Text>
                             </Box>
-                            <Box pb={"md"}>
+                            <Box pb={"md"} />
                                 <Title order={6}>Dresscode-Update</Title>
                                 <Text size="11pt">
                                     Da wir uns unter freiem Himmel das Ja-Wort geben, sind leichte Stoffe wie Leinen sowie schicke Hüte natürlich erlaubt.
