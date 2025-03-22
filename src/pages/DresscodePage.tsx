@@ -87,6 +87,9 @@ const DresscodePage = () => {
 
                                 <Text size="11pt">
                                     Der Farbcode dient nur als Orientierung – keine Sorge, wenn euer Outfit nicht exakt passt. Hauptsache, ihr fühlt euch wohl und bleibt dem festlichen Spätsommer-Look treu. 
+                               </Text>
+                                
+                                <Text size="11pt"> 
                                     Wir freuen uns auf euch! 
                                 </Text>
                             </Box>
