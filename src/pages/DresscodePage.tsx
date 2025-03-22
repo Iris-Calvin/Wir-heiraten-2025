@@ -65,7 +65,7 @@ const DresscodePage = () => {
 
                                 </Text>
                             </Box>
-                            <Box>
+                            <Box pb={"md"}>
                                 <Title order={6}>Herren</Title>
                                 <Text size="11pt">
                                     Schwarze, graue oder blaue Anzüge sind selbstverständlich eine sichere Wahl. Wer aber mutig ist, darf sich gerne etwas aus der Fabpalette wagen!
