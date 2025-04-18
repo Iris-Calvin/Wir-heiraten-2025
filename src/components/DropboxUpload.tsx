@@ -1,8 +1,5 @@
 import { Dropbox } from 'dropbox';
 
-// Debug: Logge den Access Token (nur lokal verwenden!)
-console.log("🔐 VITE_DROPBOX_ACCESS_TOKEN:", import.meta.env.VITE_DROPBOX_ACCESS_TOKEN);
-
 // Erstelle die Dropbox-Instanz ohne explizite Übergabe von fetch
 const dbx = new Dropbox({
   accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN,
