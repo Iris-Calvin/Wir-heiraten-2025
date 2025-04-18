@@ -14,7 +14,7 @@ const DropboxGallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const folderPath = '/Hochzeit2025'; // ❗️Ordnernamen hier setzen
+        const folderPath = '/hochzeit2025'; // ❗️Ordnernamen hier setzen
         const response = await dbx.filesListFolder({ path: folderPath });
 
         const links = await Promise.all(
