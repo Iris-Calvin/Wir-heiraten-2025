@@ -1,5 +1,5 @@
 // Fotos.tsx
-import FileDrop from '../components/FileDrop.tsx';
+import { FileDrop } from '../components/FileDrop.tsx';
 import DropboxGallery from '../components/DropboxGallery.tsx';
 import { Box, Text } from '@mantine/core';
 import classes from '../css/Fotos.module.css';
