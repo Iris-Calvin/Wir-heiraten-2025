@@ -19,6 +19,7 @@ const DropboxUpload = async (file: File) => {
     });
 
     console.log('✅ Datei erfolgreich hochgeladen:', response);
+    console.log("✅ Token geladen:", import.meta.env.VITE_DROPBOX_ACCESS_TOKEN);
     console.log("🔍 Datei:", file);
     console.log("📂 Upload-Pfad:", UPLOAD_PATH);
     alert(`✅ "${file.name}" wurde erfolgreich hochgeladen!`);
