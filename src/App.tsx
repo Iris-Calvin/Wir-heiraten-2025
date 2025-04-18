@@ -16,7 +16,7 @@ import ImagePage from './pages/ImagePage.tsx';
 import InfoPage from './pages/InfoPage.tsx';
 import FirstVisitPage from './pages/FirstVisitPage.tsx';
 import RSVPPage from './pages/RSVPPage.tsx';
-import FotosPage from './pages/PhotoPage.tsx'; // 👈 NEU
+import PhotoPage from './pages/PhotoPage.tsx'; // 👈 NEU
 
 // Cookie-Handling
 function deleteCookie(name: string) {
