@@ -1,55 +1,42 @@
 // DropboxGallery.tsx
-import { useEffect, useState } from 'react';
-import { Dropbox } from 'dropbox';  // Dropbox SDK
-import { Image, Box, Grid, Loader } from '@mantine/core';
+// DropboxGallery.tsx
+import React, { useEffect, useState } from 'react';
+import { Dropbox } from 'dropbox';
+import { Image } from '@mantine/core';
+import { Box } from '@mantine/core';
 
 const DropboxGallery = () => {
   const [images, setImages] = useState<string[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const dbx = new Dropbox({ accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN });
 
   useEffect(() => {
+    // Lade die Dateien von Dropbox
     const fetchImages = async () => {
-      const dbx = new Dropbox({
-        accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN,  // Sicherstellen, dass der Token richtig geladen wird
-        fetch: window.fetch,  // fetch explizit übergeben
-      });
-
       try {
-        // Liste der Ordner und Dateien abrufen
         const response = await dbx.filesListFolder({ path: '/hochzeit2025' });
-
-        // Nur Bilder extrahieren
         const imageUrls = response.entries
-          .filter((entry: any) => entry['.tag'] === 'file' && entry.name.match(/\.(jpg|jpeg|png|gif)$/i))
-          .map((entry: any) => `https://www.dropbox.com/s/${entry.id}?dl=1`);
-
-        setImages(imageUrls);
+          .filter((entry: any) => entry['.tag'] === 'file')
+          .map((file: any) => dbx.filesGetTemporaryLink({ path: file.path_lower }));
+        
+        const links = await Promise.all(imageUrls);
+        setImages(links.map(link => link.link));
       } catch (error) {
-        console.error("❌ Fehler beim Abrufen der Bilder:", error);
-      } finally {
-        setLoading(false);
+        console.error("Fehler beim Abrufen der Bilder:", error);
       }
     };
 
     fetchImages();
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
+  }, [dbx]);
 
   return (
     <Box>
-      <Text size="lg" weight={500}>
-        Fotos aus Dropbox:
-      </Text>
-      <Grid gutter="sm">
-        {images.map((url, index) => (
-          <Grid.Col span={4} key={index}>
-            <Image src={url} alt={`Foto ${index + 1}`} />
-          </Grid.Col>
-        ))}
-      </Grid>
+      {images.length === 0 ? (
+        <p>Keine Bilder gefunden.</p>
+      ) : (
+        images.map((url, index) => (
+          <Image key={index} src={url} alt={`Image ${index + 1}`} />
+        ))
+      )}
     </Box>
   );
 };
