@@ -11,7 +11,10 @@ const DropboxGallery = () => {
   const accessToken = import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
   console.log("🔐 Access Token ist:", accessToken);
 
-  const dbx = new Dropbox({ accessToken, fetch: window.fetch });
+  const dbx = new Dropbox({
+  accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN,
+  fetch: fetch  // KEIN window.fetch!
+});
 
   useEffect(() => {
     const fetchImages = async () => {
