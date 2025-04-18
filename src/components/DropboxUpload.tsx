@@ -4,7 +4,7 @@ import { Dropbox } from 'dropbox';
 const dbx = new Dropbox({ accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN });
 
 const DropboxUpload = async (file: File) => {
-  const UPLOAD_PATH = `/Hochzeitsfotos2025/${file.name}`; // <-- Du kannst diesen Ordnernamen ändern
+  const UPLOAD_PATH = `/Hochzeit2025/${file.name}`; // <-- Du kannst diesen Ordnernamen ändern
 
   try {
     const response = await dbx.filesUpload({
