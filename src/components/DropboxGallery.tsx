@@ -30,10 +30,18 @@ const fetchImages = async () => {
     const folderPath = '/hochzeit2025';
     const list = await dbx.filesListFolder({ path: folderPath });
 
+    // Logge die gesamte Antwort, um mehr Details zu erhalten
+    console.log('Antwort von Dropbox:', list);
+
+    // Überprüfe, ob "entries" vorhanden sind
     if (!list || !list.entries) {
-      throw new Error('Fehlende "entries" in der Antwort');
+      console.error('❌ Fehlende "entries" in der Antwort:', list);
+      setImageLinks([]);
+      setLoading(false);
+      return;
     }
 
+    // Filtere nur die Dateien heraus
     const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
     if (entries.length === 0) {
       console.log('📂 Keine Bilder im Ordner gefunden.');
