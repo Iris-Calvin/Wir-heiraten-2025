@@ -11,7 +11,7 @@ const PhotoPage = () => {
         Danke für eure Fotos!
       </Text>
       <FileDrop />
-      //    <DropboxGallery />
+     {/* <DropboxGallery /> */}
     </Box>
   );
 };
