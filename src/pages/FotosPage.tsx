@@ -1,26 +1,19 @@
 // Fotos.tsx
-import React from 'react';
-import DropboxUpload from './DropboxUpload';
-import DropboxGallery from './DropboxGallery';
-import styles from './Fotos.module.css'; // NEU
+import FileDrop from '../components/FileDrop.tsx';
+import DropboxGallery from '../components/DropboxGallery.tsx';
+import { Box, Text } from '@mantine/core';
+import classes from '../css/Fotos.module.css';
 
-const Fotos = () => {
+const FotosPage = () => {
   return (
-    <div>
-      <h1>Fotos hochladen und herunterladen</h1>
-
-      {/* Upload-Bereich mit Style */}
-      <div className={styles.uploadContainer}>
-        <p className={styles.uploadText}>Teile deine schönsten Erinnerungen!</p>
-        <DropboxUpload />
-      </div>
-
-      {/* Galerie mit Style */}
-      <div className={styles.gallery}>
-        <DropboxGallery />
-      </div>
-    </div>
+    <Box className={classes.wrapper}>
+      <Text size="xl" className={classes.title}>
+        Danke für eure Fotos!
+      </Text>
+      <FileDrop />
+      <DropboxGallery />
+    </Box>
   );
 };
 
-export default Fotos;
+export default FotosPage;
