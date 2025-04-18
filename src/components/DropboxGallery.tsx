@@ -22,8 +22,14 @@ const DropboxGallery = () => {
     const fetchImages = async () => {
       try {
         const folderPath = '/hochzeit2025';
-        const list = await dbx.filesListFolder({ path: folderPath });
+      const list = await dbx.filesListFolder({ path: folderPath });
 
+        if (!list.entries || !Array.isArray(list.entries)) {
+          console.error("❌ Unerwartete Antwort von Dropbox:", list);
+          setLoading(false);
+          return;
+        }
+        
         const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
 
         const links: string[] = [];
