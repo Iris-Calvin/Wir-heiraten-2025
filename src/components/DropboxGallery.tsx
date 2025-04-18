@@ -25,46 +25,42 @@ const DropboxGallery = () => {
         console.error("❌ Access Token ungültig oder abgelaufen:", err);
       });
 
-    const fetchImages = async () => {
+const fetchImages = async () => {
+  try {
+    const folderPath = '/hochzeit2025';
+    const list = await dbx.filesListFolder({ path: folderPath });
+
+    if (!list || !list.entries) {
+      throw new Error('Fehlende "entries" in der Antwort');
+    }
+
+    const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
+    if (entries.length === 0) {
+      console.log('📂 Keine Bilder im Ordner gefunden.');
+      setImageLinks([]);
+      setLoading(false);
+      return;
+    }
+
+    const links: string[] = [];
+    for (const file of entries) {
       try {
-        const folderPath = '/hochzeit2025';
-
-        const list = await dbx.filesListFolder({ path: folderPath });
-        console.log("📦 Dropbox-Antwort:", list);
-
-        if (!list || !Array.isArray(list.entries)) {
-          console.error("❌ Unerwartete Antwort von Dropbox:", list);
-          setLoading(false);
-          return;
-        }
-
-        const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
-
-        if (entries.length === 0) {
-          console.log('📂 Keine Bilder im Ordner gefunden.');
-          setImageLinks([]);
-          setLoading(false);
-          return;
-        }
-
-        const links: string[] = [];
-
-        for (const file of entries) {
-          try {
-            const link = await dbx.filesGetTemporaryLink({ path: file.path_lower! });
-            links.push(link.link);
-          } catch (err) {
-            console.error("❌ Fehler beim Abrufen des Bild-Links:", err);
-          }
-        }
-
-        setImageLinks(links);
-      } catch (error: any) {
-        console.error("❌ Fehler beim Abrufen der Bilder:", error);
-      } finally {
-        setLoading(false);
+        const link = await dbx.filesGetTemporaryLink({ path: file.path_lower! });
+        links.push(link.link);
+      } catch (err) {
+        console.error("❌ Fehler beim Abrufen des Bild-Links:", err);
       }
-    };
+    }
+
+    setImageLinks(links);
+    setLoading(false);
+  } catch (error: any) {
+    console.error("❌ Fehler beim Abrufen der Bilder:", error.message || error);
+    setLoading(false);
+  }
+};
+
+
 
     fetchImages();
   }, []);
