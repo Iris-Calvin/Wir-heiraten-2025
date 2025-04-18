@@ -71,7 +71,7 @@ function App() {
           <Route path="/rsvp" element={<RSVPPage />} />
           <Route path="/first-visit" element={<FirstVisitPage />} />
           <Route path="/infos" element={<InfoPage />} />
-          <Route path="/fotos" element={<PhotoPage />} /> {/* ✅ NEU */}
+          <Route path="/photo" element={<PhotoPage />} /> {/* ✅ NEU */}
           {/* <Route path="/images" element={<ImagePage />} /> */}
           {/* <Route path="/messages" element={<MessagePage />} /> */}
         </Routes>
