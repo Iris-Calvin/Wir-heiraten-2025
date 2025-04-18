@@ -18,7 +18,7 @@ const DropboxGallery = () => {
   useEffect(() => {
     const fetchFiles = async () => {
       try {
-        const res = await dbx.filesListFolder({ path: '/your-folder-name' }); // TODO: Ordnername anpassen
+        const res = await dbx.filesListFolder({ path: '/Hochzeit2025' }); // TODO: Ordnername anpassen
 
         const entries = res.result.entries.filter(
           (entry) => entry['.tag'] === 'file'
