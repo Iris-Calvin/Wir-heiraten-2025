@@ -1,27 +1,25 @@
 import { Dropbox } from 'dropbox';
 
+// Hole das Access Token aus deiner .env-Datei (funktioniert mit Vite)
 const dbx = new Dropbox({ accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN });
 
-const DropboxUpload = (file: File) => {
-  // dbx.usersGetCurrentAccount()
-  // .then(function(response) {
-  //   console.log(response);
-  // })
-  // .catch(function(error) {
-  //   console.error(error);
-  // });
+const DropboxUpload = async (file: File) => {
+  const UPLOAD_PATH = `/hochzeitsfotos/${file.name}`; // <-- Du kannst diesen Ordnernamen ändern
 
-  
-
-  dbx.filesUpload({ path: `/your-folder-name/${file.name}`, contents: file }) //TODO: Change your-folder-name
-    .then(response => {
-      // console.log('File uploaded', response);
-      console.log('File uploaded.');
-    })
-    .catch(error => {
-      // console.error('Error uploading file:', error);
-      console.error("Error uploading file.")
+  try {
+    const response = await dbx.filesUpload({
+      path: UPLOAD_PATH,
+      contents: file,
+      mode: 'add', // 'add' = nicht überschreiben, sondern umbenennen falls vorhanden
+      autorename: true
     });
+
+    console.log('✅ Datei erfolgreich hochgeladen:', response);
+    alert(`✅ "${file.name}" wurde erfolgreich hochgeladen!`);
+  } catch (error) {
+    console.error('❌ Fehler beim Hochladen:', error);
+    alert(`❌ Fehler beim Hochladen von "${file.name}". Bitte versuche es erneut.`);
+  }
 };
 
 export default DropboxUpload;
