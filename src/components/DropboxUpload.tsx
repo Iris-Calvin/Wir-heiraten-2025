@@ -10,7 +10,7 @@ dbx.usersGetCurrentAccount()
   .catch(err => console.error("❌ Ungültiger Access Token oder Berechtigungsfehler:", err));
 
 const DropboxUpload = async (file: File) => {
-  const UPLOAD_PATH = `/hochzeitsfotos2025/${file.name}`;
+  const UPLOAD_PATH = `/hochzeit2025/${file.name}`;
 
   try {
     const response = await dbx.filesUpload({
