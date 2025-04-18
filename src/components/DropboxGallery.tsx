@@ -1,51 +1,77 @@
 // DropboxGallery.tsx
 import React, { useEffect, useState } from 'react';
 import { Dropbox } from 'dropbox';
-import { Image, Box, Text } from '@mantine/core';
+import { SimpleGrid, Image, Text, Loader, Center } from '@mantine/core';
 
 const DropboxGallery = () => {
-  const [images, setImages] = useState<string[]>([]);
-  const [error, setError] = useState<string>('');
-  const dbx = new Dropbox({ accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN });
+  const [imageLinks, setImageLinks] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Initialisiere Dropbox
+  const accessToken = import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
+  console.log("🔐 Access Token ist:", accessToken);
+
+  const dbx = new Dropbox({ accessToken, fetch: window.fetch });
 
   useEffect(() => {
-    // Lade die Dateien von Dropbox
     const fetchImages = async () => {
       try {
-        const response = await dbx.filesListFolder({ path: '/hochzeit2025' });
+        const folderPath = '/hochzeit2025';
 
-        // Sicherstellen, dass 'entries' existiert
-        if (response.entries && Array.isArray(response.entries)) {
-          const imageUrls = response.entries
-            .filter((entry: any) => entry['.tag'] === 'file')
-            .map((file: any) => dbx.filesGetTemporaryLink({ path: file.path_lower }));
+        const list = await dbx.filesListFolder({ path: folderPath });
+        const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
 
-          const links = await Promise.all(imageUrls);
-          setImages(links.map(link => link.link));
-        } else {
-          setError("Keine Bilder im Ordner gefunden.");
+        if (entries.length === 0) {
+          console.log('📂 Keine Bilder im Ordner gefunden.');
+          setImageLinks([]);
+          setLoading(false);
+          return;
         }
-      } catch (err) {
-        setError("Fehler beim Abrufen der Bilder: " + err.message);
-        console.error("Fehler beim Abrufen der Bilder:", err);
+
+        const links: string[] = [];
+
+        for (const file of entries) {
+          try {
+            const link = await dbx.filesGetTemporaryLink({ path: file.path_lower! });
+            links.push(link.link);
+          } catch (err) {
+            console.error("❌ Fehler beim Abrufen des Bild-Links:", err);
+          }
+        }
+
+        setImageLinks(links);
+        setLoading(false);
+      } catch (error: any) {
+        console.error("❌ Fehler beim Abrufen der Bilder:", error);
+        setLoading(false);
       }
     };
 
     fetchImages();
-  }, [dbx]);
+  }, []);
+
+  if (loading) {
+    return (
+      <Center mt="md">
+        <Loader />
+      </Center>
+    );
+  }
+
+  if (imageLinks.length === 0) {
+    return (
+      <Center mt="md">
+        <Text color="dimmed">Keine Bilder gefunden 😕</Text>
+      </Center>
+    );
+  }
 
   return (
-    <Box>
-      {error ? (
-        <Text color="red">{error}</Text>
-      ) : images.length === 0 ? (
-        <Text>Keine Bilder gefunden.</Text>
-      ) : (
-        images.map((url, index) => (
-          <Image key={index} src={url} alt={`Image ${index + 1}`} />
-        ))
-      )}
-    </Box>
+    <SimpleGrid cols={3} spacing="md" mt="md">
+      {imageLinks.map((link, index) => (
+        <Image key={index} src={link} alt={`Bild ${index + 1}`} radius="md" />
+      ))}
+    </SimpleGrid>
   );
 };
 
