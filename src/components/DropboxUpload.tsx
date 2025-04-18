@@ -15,6 +15,8 @@ const DropboxUpload = async (file: File) => {
     });
 
     console.log('✅ Datei erfolgreich hochgeladen:', response);
+    console.log("🔍 Datei:", file);
+    console.log("📂 Upload-Pfad:", `/Hochzeit2025/${file.name}`);
     alert(`✅ "${file.name}" wurde erfolgreich hochgeladen!`);
   } catch (error) {
     console.error('❌ Fehler beim Hochladen:', error);
