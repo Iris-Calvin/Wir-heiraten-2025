@@ -1,74 +1,62 @@
 // DropboxGallery.tsx
 import { useEffect, useState } from 'react';
 import { Dropbox } from 'dropbox';
-import styles from './Fotos.module.css';
+import { Modal, Image, Box } from '@mantine/core';
+import classes from '../css/Fotos.module.css';
 
 const dbx = new Dropbox({ accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN });
 
-interface FileMetadata {
-  id: string;
-  name: string;
-  path_display: string;
-  preview_url: string;
-}
-
 const DropboxGallery = () => {
-  const [files, setFiles] = useState<FileMetadata[]>([]);
+  const [imageLinks, setImageLinks] = useState<string[]>([]);
+  const [opened, setOpened] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchFiles = async () => {
+    const fetchImages = async () => {
       try {
-        const res = await dbx.filesListFolder({ path: '/Hochzeit2025' }); // TODO: Ordnername anpassen
+        const folderPath = '/Hochzeit2025'; // ❗️Ordnernamen hier setzen
+        const response = await dbx.filesListFolder({ path: folderPath });
 
-        const entries = res.result.entries.filter(
-          (entry) => entry['.tag'] === 'file'
+        const links = await Promise.all(
+          response.entries
+            .filter((file) => file[".tag"] === "file")
+            .map(async (file: any) => {
+              const res = await dbx.filesGetTemporaryLink({ path: file.path_display });
+              return res.link;
+            })
         );
 
-        const filesWithLinks: FileMetadata[] = await Promise.all(
-          entries.map(async (file: any) => {
-            const linkRes = await dbx.filesGetTemporaryLink({ path: file.path_display });
-            return {
-              id: file.id,
-              name: file.name,
-              path_display: file.path_display,
-              preview_url: linkRes.result.link,
-            };
-          })
-        );
-
-        setFiles(filesWithLinks);
+        setImageLinks(links);
       } catch (error) {
-        console.error('Fehler beim Laden der Dropbox-Dateien:', error);
+        console.error('Fehler beim Laden der Bilder:', error);
       }
     };
 
-    fetchFiles();
+    fetchImages();
   }, []);
 
-  const downloadFile = async (path: string) => {
-    try {
-      const res = await dbx.filesGetTemporaryLink({ path });
-      window.open(res.result.link, '_blank');
-    } catch (error) {
-      console.error('Download fehlgeschlagen:', error);
-    }
+  const handleImageClick = (link: string) => {
+    setSelectedImage(link);
+    setOpened(true);
   };
 
   return (
-    <div className={styles.gallery}>
-      {files.map((file) => (
-        <img
-          key={file.id}
-          className={styles.image}
-          src={file.preview_url}
-          alt={file.name}
-          onClick={() => downloadFile(file.path_display)}
-        />
+    <Box className={classes.gallery}>
+      {imageLinks.map((link, index) => (
+        <Box
+          key={index}
+          className={classes.imageWrapper}
+          onClick={() => handleImageClick(link)}
+        >
+          <Image src={link} className={classes.image} alt={`Bild ${index + 1}`} />
+        </Box>
       ))}
-    </div>
+
+      <Modal opened={opened} onClose={() => setOpened(false)} size="xl" centered>
+        {selectedImage && <Image src={selectedImage} alt="Großansicht" />}
+      </Modal>
+    </Box>
   );
 };
 
 export default DropboxGallery;
-
-
