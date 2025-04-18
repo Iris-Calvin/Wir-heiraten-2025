@@ -1,21 +1,30 @@
 // DropboxGallery.tsx
 import React, { useEffect, useState } from 'react';
 import { Dropbox } from 'dropbox';
+import fetch from 'isomorphic-fetch';
 import { SimpleGrid, Image, Text, Loader, Center } from '@mantine/core';
 
 const DropboxGallery = () => {
   const [imageLinks, setImageLinks] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Initialisiere Dropbox
   const accessToken = import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
-  console.log("🔐 Access Token ist:", accessToken);
 
   const dbx = new Dropbox({
-  accessToken: import.meta.env.VITE_DROPBOX_ACCESS_TOKEN
-});
+    accessToken,
+    fetch, // 🧠 WICHTIG!
+  });
 
   useEffect(() => {
+    // Test ob Token überhaupt geht
+    dbx.usersGetCurrentAccount()
+      .then((res) => {
+        console.log("✅ Angemeldet als:", res.name.display_name);
+      })
+      .catch((err) => {
+        console.error("❌ Access Token ungültig oder abgelaufen:", err);
+      });
+
     const fetchImages = async () => {
       try {
         const folderPath = '/hochzeit2025';
