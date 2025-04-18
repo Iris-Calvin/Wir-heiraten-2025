@@ -20,7 +20,11 @@ const DropboxGallery = () => {
     // Teste, ob Token überhaupt funktioniert
     dbx.usersGetCurrentAccount()
       .then((res) => {
-        console.log("✅ Angemeldet als:", res.name.display_name);
+        if (res?.name?.display_name) {
+          console.log("✅ Angemeldet als:", res.name.display_name);
+        } else {
+          console.warn("⚠️ Unerwartetes Antwortformat:", res);
+        }
       })
       .catch((err) => {
         console.error("❌ Access Token ungültig oder abgelaufen:", err);
