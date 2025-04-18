@@ -1,4 +1,5 @@
 // DropboxGallery.tsx
+// DropboxGallery.tsx
 import React, { useEffect, useState } from 'react';
 import { Dropbox } from 'dropbox';
 import fetch from 'isomorphic-fetch';
@@ -12,11 +13,11 @@ const DropboxGallery = () => {
 
   const dbx = new Dropbox({
     accessToken,
-    fetch, // 🧠 WICHTIG!
+    fetch, // 🧠 Wichtig für Vite + SSR
   });
 
   useEffect(() => {
-    // Test ob Token überhaupt geht
+    // Teste, ob Token überhaupt funktioniert
     dbx.usersGetCurrentAccount()
       .then((res) => {
         console.log("✅ Angemeldet als:", res.name.display_name);
@@ -30,6 +31,13 @@ const DropboxGallery = () => {
         const folderPath = '/hochzeit2025';
 
         const list = await dbx.filesListFolder({ path: folderPath });
+
+        if (!list || !list.entries) {
+          console.error("❌ Unerwartete Antwort von Dropbox:", list);
+          setLoading(false);
+          return;
+        }
+
         const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
 
         if (entries.length === 0) {
