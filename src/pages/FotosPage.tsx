@@ -1,18 +1,24 @@
 // Fotos.tsx
 import React from 'react';
-import DropboxUpload from './DropboxUpload'; // Importiere die Upload-Komponente
-import DropboxGallery from './DropboxGallery'; // Importiere die Galerie-Komponente
+import DropboxUpload from './DropboxUpload';
+import DropboxGallery from './DropboxGallery';
+import styles from './Fotos.module.css'; // NEU
 
 const Fotos = () => {
   return (
     <div>
       <h1>Fotos hochladen und herunterladen</h1>
-      
-      {/* Upload-Komponente */}
-      <DropboxUpload />
 
-      {/* Galerie anzeigen */}
-      <DropboxGallery />
+      {/* Upload-Bereich mit Style */}
+      <div className={styles.uploadContainer}>
+        <p className={styles.uploadText}>Teile deine schönsten Erinnerungen!</p>
+        <DropboxUpload />
+      </div>
+
+      {/* Galerie mit Style */}
+      <div className={styles.gallery}>
+        <DropboxGallery />
+      </div>
     </div>
   );
 };
