@@ -30,15 +30,16 @@ const DropboxGallery = () => {
       try {
         const folderPath = '/hochzeit2025';
 
-        const list = await dbx.filesListFolder({ path: folderPath });
+          const list = await dbx.filesListFolder({ path: folderPath });
+          
+          if (!list?.result?.entries) {
+            console.error("❌ Unerwartete Antwort von Dropbox:", list);
+            setLoading(false);
+            return;
+          }
+          
+          const entries = list.result.entries.filter((entry: any) => entry['.tag'] === 'file');
 
-        if (!list || !list.entries) {
-          console.error("❌ Unerwartete Antwort von Dropbox:", list);
-          setLoading(false);
-          return;
-        }
-
-        const entries = list.entries.filter((entry: any) => entry['.tag'] === 'file');
 
         if (entries.length === 0) {
           console.log('📂 Keine Bilder im Ordner gefunden.');
