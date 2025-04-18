@@ -1,6 +1,6 @@
 import { Dropbox } from 'dropbox';
 
-const accessToken = import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
+const accessToken = "sl.123abc456xyz"; //// Dein tatsächlicher Dropbox Token hier, nur zu Testzwecken! import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
 
 // DEBUG: Zeige den Token im Dev-Modus
 if (!accessToken) {
