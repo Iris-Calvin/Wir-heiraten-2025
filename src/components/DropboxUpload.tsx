@@ -1,34 +1,31 @@
 import { Dropbox } from 'dropbox';
 
-const accessToken = "sl.123abc456xyz"; //// Dein tatsächlicher Dropbox Token hier, nur zu Testzwecken! import.meta.env.VITE_DROPBOX_ACCESS_TOKEN;
+// Globaler Fetch (sicherstellen, dass fetch verfügbar ist)
+const fetch = window.fetch;
 
-// DEBUG: Zeige den Token im Dev-Modus
-if (!accessToken) {
-  console.error("❌ Kein Dropbox-Token gefunden. Hast du `.env` korrekt eingerichtet?");
-} else {
-  console.log("🔐 Token geladen:", accessToken);
-}
+// Testweise: Hardcode des Tokens direkt im Code
+const accessToken = "sl.123abc456xyz"; // Dein tatsächlicher Dropbox Token hier, nur zu Testzwecken!
 
-// Initialisiere Dropbox
+// Initialisiere Dropbox mit dem Hardcode-Token und fetch
 const dbx = new Dropbox({
   accessToken: accessToken,
-  fetch, // 👈 wichtig! sonst gibt es Fehler in modernen Browsern/Vite
+  fetch: fetch,  // Übergib den globalen fetch hier
 });
 
-// Test: Token prüfen
+// Teste, ob das Token gültig ist
 dbx.usersGetCurrentAccount()
   .then(response => console.log("✅ Access Token OK. Angemeldet als:", response.name.display_name))
   .catch(err => console.error("❌ Ungültiger Access Token oder Berechtigungsfehler:", err));
 
-// Upload-Funktion
+// Deine Upload-Funktion bleibt unverändert
 const DropboxUpload = async (file: File) => {
   const UPLOAD_PATH = `/hochzeit2025/${file.name}`;
 
   try {
     const response = await dbx.filesUpload({
       path: UPLOAD_PATH,
-      contents: await file.arrayBuffer(), // ⬅️ richtig!
-      mode: { '.tag': 'add' },            // ⬅️ wichtig für Konfliktvermeidung
+      contents: await file.arrayBuffer(),
+      mode: { '.tag': 'add' },
       autorename: true
     });
 
@@ -41,3 +38,4 @@ const DropboxUpload = async (file: File) => {
 };
 
 export default DropboxUpload;
+
