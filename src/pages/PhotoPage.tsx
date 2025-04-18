@@ -1,4 +1,4 @@
-// Fotos.tsx
+// Photo.tsx
 import { FileDrop } from '../components/FileDrop.tsx';
 import DropboxGallery from '../components/DropboxGallery.tsx';
 import { Box, Text } from '@mantine/core';
