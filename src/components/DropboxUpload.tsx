@@ -18,13 +18,19 @@ const DropboxUpload = async (file: File) => {
   const UPLOAD_PATH = `/hochzeit2025/${file.name}`;
 
   try {
-    // Datei hochladen
-    const response = await dbx.filesUpload({
-      path: UPLOAD_PATH,
-      contents: await file.arrayBuffer(),
-      mode: { '.tag': 'add' },
-      autorename: true
-    });
+  const response = await dbx.filesUpload({
+    path: UPLOAD_PATH,
+    contents: await file.arrayBuffer(),
+    mode: { '.tag': 'add' },
+    autorename: true
+  });
+} catch (error) {
+  // Detaillierte Fehlerprotokollierung
+  console.error("❌ Fehler beim Hochladen (Details):", error.response);
+  console.error("Fehlercode:", error.status);
+  console.error("Fehlermeldung:", error.message);
+  alert(`❌ Fehler beim Hochladen von "${file.name}". Bitte versuche es erneut.`);
+}
 
     console.log('✅ Datei erfolgreich hochgeladen:', response);
     alert(`✅ "${file.name}" wurde erfolgreich hochgeladen!`);
