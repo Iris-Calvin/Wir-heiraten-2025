@@ -1,3 +1,4 @@
+// DropboxGallery.tsx
 import { useState, useEffect } from 'react';
 import { Dropbox } from 'dropbox';
 
@@ -7,19 +8,17 @@ const DropboxGallery = () => {
   const [files, setFiles] = useState<any[]>([]);
 
   useEffect(() => {
-    // Abrufen der Dateien aus dem Dropbox-Ordner
     dbx.filesListFolder({ path: '/your-folder-name' }) // Ordnername anpassen
       .then(response => {
         const fileList = response.entries.filter(file => file['.tag'] === 'file');
-        setFiles(fileList);  // Liste der Dateien speichern
+        setFiles(fileList);
       })
       .catch(error => {
         console.error('Error fetching files from Dropbox:', error);
       });
   }, []);
 
-  // Funktion zum Herunterladen von Dateien
-  const downloadFile = (path: string, name: string) => {
+  const downloadFile = (path: string) => {
     dbx.filesGetTemporaryLink({ path }).then(response => {
       const link = response.link;
       window.open(link, '_blank');
@@ -35,12 +34,12 @@ const DropboxGallery = () => {
         {files.map((file: any) => (
           <div key={file.id} style={{ margin: '10px' }}>
             <img 
-              src={file.preview_url}  // Du kannst hier den Link zur Vorschau verwenden
+              src={file.preview_url}  // Vorschau-Bild
               alt={file.name} 
               width="150" 
               height="150" 
               style={{ cursor: 'pointer' }}
-              onClick={() => downloadFile(file.path_display, file.name)}  // Download beim Klicken
+              onClick={() => downloadFile(file.path_display)} // Klick für Download
             />
             <p>{file.name}</p>
           </div>
@@ -51,3 +50,4 @@ const DropboxGallery = () => {
 };
 
 export default DropboxGallery;
+
