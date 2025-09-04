@@ -11,7 +11,6 @@ export function FileDrop(props: Partial<DropzoneProps>) {
   const [previewUrls, setPreviewUrls] = useState<string[]>([]);
   const { hovered, ref } = useHover();
 
-  const correctPassword = '0609';
 
   const handleAcceptedFiles = (files: File[]) => {
     const previews = files.map(file => URL.createObjectURL(file));
@@ -20,31 +19,6 @@ export function FileDrop(props: Partial<DropzoneProps>) {
       DropboxUpload(file);
     });
   };
-
-  const checkPassword = () => {
-    if (password === correctPassword) {
-      setAuthenticated(true);
-    } else {
-      alert('❌ Falsches Passwort');
-    }
-  };
-
-  if (!authenticated) {
-    return (
-      <Box style={{ maxWidth: 400, margin: '4rem auto', textAlign: 'center' }}>
-        <Text size="xl" mb="md">📸 Hochzeitsbilder hochladen</Text>
-        <Text mb="xs">Bitte Passwort eingeben, um Bilder hochzuladen:</Text>
-        <TextInput
-          type="password"
-          placeholder="Passwort"
-          value={password}
-          onChange={(event) => setPassword(event.currentTarget.value)}
-          mb="sm"
-        />
-        <Button onClick={checkPassword}>🔓 Entsperren</Button>
-      </Box>
-    );
-  }
 
   return (
     <Box style={{
